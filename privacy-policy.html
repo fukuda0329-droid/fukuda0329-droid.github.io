@@ -1,1 +1,368 @@
+<title>DJ Log プライバシーポリシー</title>
+<style>
+  :root{
+    --bg:#f6f8f8;
+    --surface:#ffffff;
+    --surface-2:#eef2f1;
+    --text:#12181a;
+    --text-2:#525f61;
+    --text-3:#7c8788;
+    --border:#e0e6e5;
+    --accent:#149170;
+    --accent-2:#0d6e55;
+    --accent-soft:#e5f6ef;
+    --rule:#d7dedb;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0d1112;
+      --surface:#151a1c;
+      --surface-2:#1b2123;
+      --text:#eef3f1;
+      --text-2:#aab6b5;
+      --text-3:#7f8c8b;
+      --border:#262e2f;
+      --accent:#4be3ab;
+      --accent-2:#7aedc2;
+      --accent-soft:rgba(75,227,171,0.12);
+      --rule:#262e2f;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0d1112;
+    --surface:#151a1c;
+    --surface-2:#1b2123;
+    --text:#eef3f1;
+    --text-2:#aab6b5;
+    --text-3:#7f8c8b;
+    --border:#262e2f;
+    --accent:#4be3ab;
+    --accent-2:#7aedc2;
+    --accent-soft:rgba(75,227,171,0.12);
+    --rule:#262e2f;
+  }
 
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:"Noto Sans JP","Hiragino Kaku Gothic ProN",sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{
+    max-width:760px;
+    margin:0 auto;
+    padding:0 24px;
+    padding-block:56px 96px;
+  }
+  header.doc-head{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    margin-bottom:40px;
+  }
+  .mark{
+    width:44px;height:44px;border-radius:12px;
+    background:linear-gradient(155deg, var(--accent) 0%, var(--accent-2) 100%);
+    display:flex;align-items:center;justify-content:center;
+    flex:none;
+  }
+  .mark svg{width:24px;height:24px;display:block;}
+  .brand-line{display:flex;flex-direction:column;gap:2px;}
+  .brand-name{
+    font-family:"Zen Kaku Gothic New","Noto Sans JP",sans-serif;
+    font-weight:700;
+    font-size:15px;
+    letter-spacing:.02em;
+    color:var(--text);
+  }
+  .brand-sub{
+    font-size:12px;
+    color:var(--text-3);
+    letter-spacing:.04em;
+  }
+
+  h1{
+    font-family:"Zen Kaku Gothic New","Noto Sans JP",sans-serif;
+    font-weight:700;
+    font-size:clamp(28px,4.2vw,38px);
+    line-height:1.3;
+    margin:0 0 10px;
+    text-wrap:balance;
+  }
+  .meta{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px 18px;
+    font-size:13px;
+    color:var(--text-3);
+    font-variant-numeric:tabular-nums;
+    margin-bottom:36px;
+    padding-bottom:28px;
+    border-bottom:1px solid var(--border);
+  }
+  .meta strong{color:var(--text-2);font-weight:500;}
+
+  .lede{
+    font-size:16px;
+    line-height:1.9;
+    color:var(--text-2);
+    margin:0 0 44px;
+    max-width:62ch;
+  }
+
+  section{margin-bottom:44px;}
+  section:last-of-type{margin-bottom:0;}
+
+  .sec-head{
+    display:flex;
+    align-items:baseline;
+    gap:12px;
+    margin-bottom:16px;
+  }
+  .sec-num{
+    font-family:"Zen Kaku Gothic New",sans-serif;
+    font-size:13px;
+    font-weight:700;
+    color:var(--accent);
+    letter-spacing:.03em;
+    flex:none;
+  }
+  h2{
+    font-family:"Zen Kaku Gothic New","Noto Sans JP",sans-serif;
+    font-size:19px;
+    font-weight:700;
+    margin:0;
+    line-height:1.5;
+    text-wrap:balance;
+  }
+
+  p{
+    font-size:15px;
+    line-height:1.95;
+    color:var(--text-2);
+    margin:0 0 14px;
+    max-width:64ch;
+  }
+  p:last-child{margin-bottom:0;}
+
+  ul.plain{
+    margin:0 0 14px;
+    padding-left:1.2em;
+    font-size:15px;
+    line-height:1.9;
+    color:var(--text-2);
+  }
+  ul.plain li{margin-bottom:6px;}
+  ul.plain li:last-child{margin-bottom:0;}
+
+  .table-wrap{
+    overflow-x:auto;
+    border:1px solid var(--border);
+    border-radius:12px;
+    background:var(--surface);
+  }
+  table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:13.5px;
+    min-width:560px;
+  }
+  thead th{
+    text-align:left;
+    font-family:"Zen Kaku Gothic New",sans-serif;
+    font-weight:700;
+    font-size:12px;
+    letter-spacing:.04em;
+    color:var(--text-3);
+    background:var(--surface-2);
+    padding:12px 16px;
+    border-bottom:1px solid var(--border);
+  }
+  tbody td{
+    padding:14px 16px;
+    border-bottom:1px solid var(--border);
+    color:var(--text-2);
+    line-height:1.7;
+    vertical-align:top;
+  }
+  tbody tr:last-child td{border-bottom:none;}
+  td.col-item{
+    color:var(--text);
+    font-weight:600;
+    white-space:nowrap;
+  }
+  .tag{
+    display:inline-block;
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:.03em;
+    color:var(--accent-2);
+    background:var(--accent-soft);
+    border-radius:999px;
+    padding:3px 10px;
+    margin-top:4px;
+  }
+
+  .callout{
+    border-left:3px solid var(--accent);
+    background:var(--accent-soft);
+    border-radius:0 10px 10px 0;
+    padding:16px 18px;
+    margin-top:18px;
+  }
+  .callout p{color:var(--text);font-size:14px;margin:0;}
+
+  hr.rule{
+    border:none;
+    border-top:1px solid var(--rule);
+    margin:44px 0;
+  }
+
+  footer{
+    margin-top:56px;
+    padding-top:28px;
+    border-top:1px solid var(--border);
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    gap:12px;
+    font-size:12.5px;
+    color:var(--text-3);
+  }
+  footer a{color:var(--accent-2);text-decoration:none;}
+  footer a:hover{text-decoration:underline;}
+
+  @media (max-width:480px){
+    .wrap{padding-block:40px 64px;}
+    thead th:nth-child(3), tbody td:nth-child(3){display:none;}
+  }
+</style>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Zen+Kaku+Gothic+New:wght@500;700&display=swap" rel="stylesheet">
+
+<div class="wrap">
+  <header class="doc-head">
+    <div class="mark">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4 15V9L20 6V16.5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="6" cy="17" r="2.4" fill="white"/>
+        <circle cx="18" cy="18" r="2.4" fill="white"/>
+      </svg>
+    </div>
+    <div class="brand-line">
+      <span class="brand-name">DJ Log</span>
+      <span class="brand-sub">iOS App</span>
+    </div>
+  </header>
+
+  <h1>プライバシーポリシー</h1>
+  <div class="meta">
+    <span><strong>制定日:</strong> 2026年9月11日</span>
+    <span><strong>最終更新日:</strong> 2026年9月15日</span>
+    <span><strong>対象アプリ:</strong> DJ Log(iOS)</span>
+  </div>
+
+  <p class="lede">
+    「DJ Log」(以下「本アプリ」)は、DJプレイ中にかけた楽曲を記録するためのiOSアプリです。本ポリシーは、本アプリが取得する情報の種類、利用目的、保存場所について説明するものです。本アプリは広告配信プラットフォーム(Google Mobile Ads)を使用しており、その過程でデバイス識別子などが収集されます。
+  </p>
+
+  <section>
+    <div class="sec-head"><span class="sec-num">01</span><h2>取得する情報と利用目的</h2></div>
+    <p>本アプリが取得する情報は、アプリ本来の機能(楽曲の記録・管理)を実現するためだけに使用されます。取得する情報は次の3種類です。</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>情報の種類</th><th>利用目的</th><th>保存・送信先</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="col-item">マイク(周囲の音声)</td>
+            <td>再生中の楽曲を自動認識するため、また、ユーザー自身が手持ちの楽曲を解析し記録可能にするために使用します。<span class="tag">端末内で処理</span></td>
+            <td>音声データを本アプリ運営者のサーバーへ送信・保存することはありません。認識・解析処理は端末上で完結します。</td>
+          </tr>
+          <tr>
+            <td class="col-item">楽曲ログ情報<br>(曲名・アーティスト名・記録日時など)</td>
+            <td>ユーザーが記録したセットリストをアプリ内および複数端末間で保持・同期するために使用します。</td>
+            <td>Apple社のiCloud(CloudKit)を通じ、ユーザー本人のiCloudアカウント内に保存されます。本アプリ運営者がこのデータを閲覧・取得することはできません。</td>
+          </tr>
+          <tr>
+            <td class="col-item">楽曲名などの検索キーワード</td>
+            <td>該当楽曲のアートワーク画像を取得するために使用します。</td>
+            <td>Apple社のiTunes Search APIへ送信されます。個人を特定する情報は含まれません。</td>
+          </tr>
+          <tr>
+            <td class="col-item">デバイスID<br>(IDFA)</td>
+            <td>Google Mobile Ads(Google AdMob)による広告配信および広告ターゲティングのために使用します。<span class="tag">広告配信</span></td>
+            <td>Google社(Google Mobile Ads/AdMob)へ送信されます。Googleのプライバシーポリシーに従い、広告配信と広告パフォーマンス測定に使用されます。</td>
+          </tr>
+          <tr>
+            <td class="col-item">端末の利用状況情報</td>
+            <td>Google Mobile Adsの広告ターゲティング精度向上、および広告パフォーマンス測定のために使用します。</td>
+            <td>Google社(Google Mobile Ads/AdMob)へ送信されます。</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout">
+      <p>マイクへのアクセスは、iOSの権限ダイアログでユーザーが許可した場合のみ行われます。本アプリはバックグラウンド状態では動作せず、マイクの使用はアプリの利用中に限られます。</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><span class="sec-num">02</span><h2>取得しない情報</h2></div>
+    <p>本アプリは、次の情報を取得・収集しません。ただし、Google Mobile Ads は下記「Google Mobile Ads について」をご参照ください。</p>
+    <ul class="plain">
+      <li>氏名・メールアドレス・電話番号などの個人を特定できる登録情報(本アプリはアカウント登録を必要としません)</li>
+      <li>連絡先・写真ライブラリ・位置情報など、本アプリの機能に無関係な端末内データ</li>
+      <li>本アプリ独自の解析(アナリティクス)SDKやトラッキングツール(Google Mobile Ads 以外の第三者製トラッキング)</li>
+    </ul>
+  </section>
+
+  <section>
+    <div class="sec-head"><span class="sec-num">03</span><h2>第三者への提供</h2></div>
+    <p>本アプリは、取得した情報を第三者に販売・提供することはありません。上記の通り、楽曲ログ情報はユーザー本人のiCloudアカウント内に保存され、アートワーク検索のみApple社のiTunes Search APIと通信しますが、これもApple社が提供する公開の検索機能を利用するものであり、個人情報の受け渡しは発生しません。</p>
+  </section>
+
+  <section>
+    <div class="sec-head"><span class="sec-num">04</span><h2>データの削除</h2></div>
+    <p>楽曲ログ情報は、本アプリ内の削除操作、またはiOSの「設定」アプリからiCloud同期をオフにする・本アプリをアンインストールすることで削除できます。本アプリ運営者が保有するサーバーにユーザーデータが残ることはありません。</p>
+  </section>
+
+  <section>
+    <div class="sec-head"><span class="sec-num">05</span><h2>Google Mobile Ads について</h2></div>
+    <p>本アプリは、Google社が提供する広告配信プラットフォーム「Google Mobile Ads(AdMob)」を使用しています。Google Mobile Adsは、広告配信と広告パフォーマンス測定のため、以下の情報を収集・使用します。</p>
+    <ul class="plain">
+      <li>デバイス識別子(IDFA)</li>
+      <li>端末の利用状況情報</li>
+      <li>広告インタラクション情報</li>
+    </ul>
+    <p>これらの情報は、ユーザーに関連性のある広告を配信し、広告配信のパフォーマンスを測定するために使用されます。ユーザーは、iOSの「設定」アプリで「プライバシー」→「トラッキング」から、本アプリのトラッキングを制限することができます。詳細は <a href="https://policies.google.com/privacy" style="color:var(--accent-2);font-weight:600;text-decoration:none;">Google のプライバシーポリシー</a>をご参照ください。</p>
+  </section>
+
+  <section>
+    <div class="sec-head"><span class="sec-num">06</span><h2>お子様のプライバシー</h2></div>
+    <p>本アプリは子供を対象としたアプリではなく、年齢を問わず、お子様から意図的に個人情報を収集することはありません。</p>
+  </section>
+
+  <section>
+    <div class="sec-head"><span class="sec-num">07</span><h2>本ポリシーの変更</h2></div>
+    <p>法令の改正や本アプリの機能追加に伴い、本ポリシーの内容を予告なく変更する場合があります。変更後の内容は本ページに掲載した時点で効力を持ち、ページ上部の「最終更新日」を更新してお知らせします。</p>
+  </section>
+
+  <hr class="rule">
+
+  <section>
+    <div class="sec-head"><span class="sec-num">08</span><h2>お問い合わせ</h2></div>
+    <p>本ポリシーおよび本アプリのプライバシーに関するお問い合わせは、下記までご連絡ください。</p>
+    <p><a href="mailto:fukuda0329@gmail.com" style="color:var(--accent-2);font-weight:600;text-decoration:none;">fukuda0329@gmail.com</a></p>
+  </section>
+
+  <footer>
+    <span>© 2026 DJ Log</span>
+    <span><a href="mailto:fukuda0329@gmail.com">お問い合わせ</a></span>
+  </footer>
+</div>
