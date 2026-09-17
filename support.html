@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DJ Log サポート</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Zen+Kaku+Gothic+New:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f6f8f8;
+    --surface:#ffffff;
+    --surface-2:#eef2f1;
+    --text:#12181a;
+    --text-2:#525f61;
+    --text-3:#7c8788;
+    --border:#e0e6e5;
+    --accent:#149170;
+    --accent-2:#0d6e55;
+    --accent-soft:#e5f6ef;
+    --rule:#d7dedb;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0d1112;
+      --surface:#151a1c;
+      --surface-2:#1b2123;
+      --text:#eef3f1;
+      --text-2:#aab6b5;
+      --text-3:#7f8c8b;
+      --border:#262e2f;
+      --accent:#4be3ab;
+      --accent-2:#7aedc2;
+      --accent-soft:rgba(75,227,171,0.12);
+      --rule:#262e2f;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0d1112;
+    --surface:#151a1c;
+    --surface-2:#1b2123;
+    --text:#eef3f1;
+    --text-2:#aab6b5;
+    --text-3:#7f8c8b;
+    --border:#262e2f;
+    --accent:#4be3ab;
+    --accent-2:#7aedc2;
+    --accent-soft:rgba(75,227,171,0.12);
+    --rule:#262e2f;
+  }
+
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:"Noto Sans JP","Hiragino Kaku Gothic ProN",sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{
+    max-width:760px;
+    margin:0 auto;
+    padding:0 24px;
+    padding-block:56px 96px;
+  }
+  header.doc-head{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    margin-bottom:40px;
+  }
+  .mark{
+    width:44px;height:44px;border-radius:12px;
+    background:linear-gradient(155deg, var(--accent) 0%, var(--accent-2) 100%);
+    display:flex;align-items:center;justify-content:center;
+    flex:none;
+  }
+  .mark svg{width:24px;height:24px;display:block;}
+  .brand-line{display:flex;flex-direction:column;gap:2px;}
+  .brand-name{
+    font-family:"Zen Kaku Gothic New","Noto Sans JP",sans-serif;
+    font-weight:700;
+    font-size:15px;
+    letter-spacing:.02em;
+    color:var(--text);
+  }
+  .brand-sub{
+    font-size:12px;
+    color:var(--text-3);
+    letter-spacing:.04em;
+  }
+
+  h1{
+    font-family:"Zen Kaku Gothic New","Noto Sans JP",sans-serif;
+    font-weight:700;
+    font-size:clamp(28px,4.2vw,38px);
+    line-height:1.3;
+    margin:0 0 14px;
+    text-wrap:balance;
+  }
+  .lede{
+    font-size:16px;
+    line-height:1.9;
+    color:var(--text-2);
+    margin:0 0 36px;
+    max-width:62ch;
+  }
+
+  .contact-card{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+    background:var(--accent-soft);
+    border:1px solid var(--border);
+    border-radius:14px;
+    padding:20px 24px;
+    margin-bottom:48px;
+  }
+  .contact-card .label{
+    font-size:12px;
+    letter-spacing:.05em;
+    color:var(--accent-2);
+    font-weight:700;
+    margin-bottom:6px;
+  }
+  .contact-card .email{
+    font-size:17px;
+    font-weight:700;
+    color:var(--text);
+  }
+  .contact-card a.btn{
+    display:inline-block;
+    background:var(--accent);
+    color:#08130f;
+    font-weight:700;
+    font-size:14px;
+    text-decoration:none;
+    padding:11px 20px;
+    border-radius:999px;
+    white-space:nowrap;
+  }
+
+  h2.sec-title{
+    font-family:"Zen Kaku Gothic New","Noto Sans JP",sans-serif;
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:.08em;
+    color:var(--text-3);
+    text-transform:uppercase;
+    margin:0 0 20px;
+  }
+
+  .faq{
+    display:flex;
+    flex-direction:column;
+    gap:1px;
+    background:var(--border);
+    border:1px solid var(--border);
+    border-radius:14px;
+    overflow:hidden;
+    margin-bottom:48px;
+  }
+  .faq-item{
+    background:var(--surface);
+    padding:22px 24px;
+  }
+  .faq-q{
+    display:flex;
+    gap:12px;
+    align-items:baseline;
+    font-family:"Zen Kaku Gothic New","Noto Sans JP",sans-serif;
+    font-weight:700;
+    font-size:15.5px;
+    color:var(--text);
+    margin:0 0 10px;
+    line-height:1.6;
+  }
+  .faq-q .q-mark{
+    flex:none;
+    color:var(--accent);
+    font-size:14px;
+  }
+  .faq-a{
+    display:flex;
+    gap:12px;
+    align-items:baseline;
+    font-size:14.5px;
+    line-height:1.85;
+    color:var(--text-2);
+    margin:0;
+  }
+  .faq-a .a-mark{
+    flex:none;
+    color:var(--text-3);
+    font-size:13px;
+  }
+
+  footer{
+    margin-top:56px;
+    padding-top:28px;
+    border-top:1px solid var(--border);
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    gap:12px;
+    font-size:12.5px;
+    color:var(--text-3);
+  }
+  footer a{color:var(--accent-2);text-decoration:none;}
+  footer a:hover{text-decoration:underline;}
+
+  @media (max-width:480px){
+    .wrap{padding-block:40px 64px;}
+    .contact-card{flex-direction:column;align-items:flex-start;}
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="doc-head">
+    <div class="mark">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4 15V9L20 6V16.5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="6" cy="17" r="2.4" fill="white"/>
+        <circle cx="18" cy="18" r="2.4" fill="white"/>
+      </svg>
+    </div>
+    <div class="brand-line">
+      <span class="brand-name">DJ Log</span>
+      <span class="brand-sub">iOS App</span>
+    </div>
+  </header>
+
+  <h1>サポート</h1>
+  <p class="lede">
+    「DJ Log」に関するご質問・不具合のご報告・機能のご要望は、下記の連絡先またはよくある質問をご確認ください。
+  </p>
+
+  <div class="contact-card">
+    <div>
+      <div class="label">お問い合わせ</div>
+      <div class="email">vdjamakasu@gmail.com</div>
+    </div>
+    <a class="btn" href="mailto:vdjamakasu@gmail.com">メールを送る</a>
+  </div>
+
+  <h2 class="sec-title">よくある質問</h2>
+  <div class="faq">
+    <div class="faq-item">
+      <p class="faq-q"><span class="q-mark">Q</span>曲が自動認識されません</p>
+      <p class="faq-a"><span class="a-mark">A</span>「設定」アプリ内のDJ Logのマイクアクセスがオンになっているかご確認ください。それでも認識しづらい場合は、アプリ内の認識間隔の設定を短くすると精度が上がることがあります。</p>
+    </div>
+    <div class="faq-item">
+      <p class="faq-q"><span class="q-mark">Q</span>一般的な音楽認識では見つからない曲を記録したい</p>
+      <p class="faq-a"><span class="a-mark">A</span>「曲の解析」機能から手持ちの楽曲を解析すると、その楽曲を端末内のデータに登録できます。登録後は、プレイ中に流れた際に自動で認識・記録されるようになります。</p>
+    </div>
+    <div class="faq-item">
+      <p class="faq-q"><span class="q-mark">Q</span>記録したログはどこに保存されますか？</p>
+      <p class="faq-a"><span class="a-mark">A</span>ご利用のiCloudアカウントに自動的に保存・同期されます。同じApple IDでサインインしていれば、他の端末からも同じログを確認できます。</p>
+    </div>
+    <div class="faq-item">
+      <p class="faq-q"><span class="q-mark">Q</span>ログの整理・並び替えはどうすればいいですか？</p>
+      <p class="faq-a"><span class="a-mark">A</span>ログをスワイプするとお気に入り登録・削除ができます。長押しするとドラッグで並び順を変更できます。</p>
+    </div>
+    <div class="faq-item">
+      <p class="faq-q"><span class="q-mark">Q</span>見た目をカスタマイズできますか？</p>
+      <p class="faq-a"><span class="a-mark">A</span>設定画面から背景・文字色を好みに変更できます。</p>
+    </div>
+    <div class="faq-item">
+      <p class="faq-q"><span class="q-mark">Q</span>プレイリストの書き出し・読み込みはできますか？</p>
+      <p class="faq-a"><span class="a-mark">A</span>設定画面から記録したログをプレイリストとして書き出し・読み込みできます。</p>
+    </div>
+    <div class="faq-item">
+      <p class="faq-q"><span class="q-mark">Q</span>不具合の報告や機能の要望を送りたい</p>
+      <p class="faq-a"><span class="a-mark">A</span>上記のメールアドレスまでご連絡ください。内容を確認の上、対応いたします。</p>
+    </div>
+  </div>
+
+  <footer>
+    <span>© 2026 DJ Log</span>
+    <span><a href="privacy-policy.html">プライバシーポリシー</a></span>
+    <span><a href="mailto:vdjamakasu@gmail.com">お問い合わせ</a></span>
+  </footer>
+</div>
+
+</body>
+</html>
