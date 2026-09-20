@@ -418,8 +418,8 @@ const translations = {
     a5: "在设置页面的“背景设计”中，可以根据喜好更改背景色、文字颜色和背景图片。<br>此外，在“收藏”项目里可以更改已收藏歌曲的背景色。",
     q6: "可以导出/导入播放列表吗？",
     a6: "可以在设置页面中将记录的日志作为txt文件或CSV文件导出或导入播放列表。",
-    q7: "想提交故障报告或功能建议",
-    a7: "如需报告故障，请附上您使用的OS版本及发生步骤，发送邮件至下方地址。",
+    q7: "想提交故障報告或功能建議",
+    a7: "如需報告故障，請附上您使用的OS版本及發生步驟，發送郵件至下方地址。",
     contactLabel: "联系我们",
     sendEmailBtn: "发送邮件",
     privacyLink: "隐私政策",
@@ -522,7 +522,7 @@ const translations = {
 const langSelect = document.getElementById('langSelect');
 
 function updateLanguage(lang) {
-  const data = translations[lang] || translations.ja;
+  const data = translations[lang] || translations.en;
   
   document.getElementById('pageTitle').innerHTML = data.title;
   document.getElementById('pageLede').innerHTML = data.lede;
@@ -545,12 +545,12 @@ langSelect.addEventListener('change', (e) => {
   updateLanguage(e.target.value);
 });
 
-// ブラウザの言語設定を初期選択に反映
-const userLang = (navigator.language || navigator.userLanguage).substring(0, 2);
-if (translations[userLang]) {
-  langSelect.value = userLang;
-  updateLanguage(userLang);
-}
+// ブラウザの言語設定の初期判定（日本語以外はすべて英語 'en' に設定）
+const userLang = (navigator.language || navigator.userLanguage).toLowerCase();
+const initialLang = userLang.startsWith('ja') ? 'ja' : 'en';
+
+langSelect.value = initialLang;
+updateLanguage(initialLang);
 </script>
 
 </body>
