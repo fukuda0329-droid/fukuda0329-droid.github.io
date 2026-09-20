@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>DJLog サポート</title>
+<title>DJLog サポート / Support</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Zen+Kaku+Gothic+New:wght@500;700&display=swap" rel="stylesheet">
@@ -67,8 +67,14 @@
   header.doc-head{
     display:flex;
     align-items:center;
+    justify-content:space-between;
     gap:14px;
     margin-bottom:40px;
+  }
+  .header-left{
+    display:flex;
+    align-items:center;
+    gap:14px;
   }
   .mark{
     width:44px;height:44px;border-radius:12px;
@@ -89,6 +95,37 @@
     font-size:12px;
     color:var(--text-3);
     letter-spacing:.04em;
+  }
+
+  /* 言語切替ドロップダウン */
+  .lang-select-wrap {
+    position: relative;
+  }
+  .lang-select {
+    appearance: none;
+    -webkit-appearance: none;
+    background: var(--surface);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 8px 32px 8px 12px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    outline: none;
+  }
+  .lang-select-wrap::after {
+    content: "";
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--text-2);
+    pointer-events: none;
   }
 
   h1{
@@ -222,76 +259,285 @@
 
 <div class="wrap">
   <header class="doc-head">
-    <div class="mark">
-      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M4 15V9L20 6V16.5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-        <circle cx="6" cy="17" r="2.4" fill="white"/>
-        <circle cx="18" cy="18" r="2.4" fill="white"/>
-      </svg>
+    <div class="header-left">
+      <div class="mark">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4 15V9L20 6V16.5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="6" cy="17" r="2.4" fill="white"/>
+          <circle cx="18" cy="18" r="2.4" fill="white"/>
+        </svg>
+      </div>
+      <div class="brand-line">
+        <span class="brand-name">DJLog</span>
+        <span class="brand-sub">iOS App</span>
+      </div>
     </div>
-    <div class="brand-line">
-      <span class="brand-name">DJLog</span>
-      <span class="brand-sub">iOS App</span>
+    
+    <div class="lang-select-wrap">
+      <select id="langSelect" class="lang-select">
+        <option value="ja">日本語</option>
+        <option value="en">English</option>
+        <option value="zh">日本語 (簡体字)</option>
+        <option value="ko">한국어</option>
+        <option value="es">Español</option>
+        <option value="de">Deutsch</option>
+        <option value="fr">Français</option>
+      </select>
     </div>
   </header>
 
-  <h1>サポート</h1>
-  <p class="lede">
+  <h1 id="pageTitle">サポート</h1>
+  <p class="lede" id="pageLede">
     「DJLog」に関するご質問は、まず「よくある質問」をご確認ください。<br>
 解決しない場合や、不具合のご報告・機能のご要望は、下記の連絡先までお気軽にお問い合わせください。<br>
 ※不具合のご報告の際は、ご使用のOSバージョンや発生手順を添えていただけますと、スムーズな対応が可能です。
   </p>
 
-  <h2 class="sec-title">よくある質問</h2>
+  <h2 class="sec-title" id="secTitle">よくある質問</h2>
   <div class="faq">
     <div class="faq-item">
-      <p class="faq-q"><span class="q-mark">Q</span>曲が自動認識されません</p>
-      <p class="faq-a"><span class="a-mark">A</span>「設定」アプリ内のDJLogのマイクアクセスがオンになっているかご確認ください。<br>それでも認識しづらい場合は、アプリ内の認識間隔の設定を短くすると精度が上がることがあります。</p>
+      <p class="faq-q"><span class="q-mark">Q</span><span id="q1">曲が自動認識されません</span></p>
+      <p class="faq-a"><span class="a-mark">A</span><span id="a1">「設定」アプリ内のDJLogのマイクアクセスがオンになっているかご確認ください。<br>それでも認識しづらい場合は、アプリ内の認識間隔の設定を短くすると精度が上がることがあります。</span></p>
     </div>
     <div class="faq-item">
-      <p class="faq-q"><span class="q-mark">Q</span>一般的な音楽認識では見つからない曲を記録したい</p>
-      <p class="faq-a"><span class="a-mark">A</span>「曲の解析」機能から手持ちのオーディオファイルを解析すると、その楽曲の解析データを端末内のデータに登録できます。<br>登録後は、自動で認識・記録されるようになります。</p>
+      <p class="faq-q"><span class="q-mark">Q</span><span id="q2">一般的な音楽認識では見つからない曲を記録したい</span></p>
+      <p class="faq-a"><span class="a-mark">A</span><span id="a2">「曲の解析」機能から手持ちのオーディオファイルを解析すると、その楽曲の解析データを端末内のデータに登録できます。<br>登録後は、自動で認識・記録されるようになります。</span></p>
     </div>
     <div class="faq-item">
-      <p class="faq-q"><span class="q-mark">Q</span>記録したログ・解析データはどこに保存されますか？</p>
-      <p class="faq-a"><span class="a-mark">A</span>ご利用のiCloudアカウントに自動的に保存・同期されます。<br>
-        同じApple IDでサインインしている他の端末からも同じログを確認できます。<br>
-      解析したデータは「曲の解析」の右上のボタンから確認・削除が可能です。<br>
-        音楽認識の際、DJLogフォルダ直下の解析データは必ず検索に使用されますが、DJLogフォルダの下層にフォルダ分けをすることにより、検索に使用するフォルダを選択できるようになります。<br>
-      解析データは「曲の解析データの保存先」でiCloudとiPhone/iPad内に一括で移動することが可能です。iCloudに保存している場合は他端末からも検出できるようになります。</p>
+      <p class="faq-q"><span class="q-mark">Q</span><span id="q3">記録したログ・解析データはどこに保存されますか？</span></p>
+      <p class="faq-a"><span class="a-mark">A</span><span id="a3">ご利用のiCloudアカウントに自動的に保存・同期されます。<br>同じApple IDでサインインしている他の端末からも同じログを確認できます。<br>解析したデータは「曲の解析」の右上のボタンから確認・削除が可能です。<br>音楽認識の際、DJLogフォルダ直下の解析データは必ず検索に使用されますが、DJLogフォルダの下層にフォルダ分けをすることにより、検索に使用するフォルダを選択できるようになります。<br>解析データは「曲の解析データの保存先」でiCloudとiPhone/iPad内に一括で移動することが可能です。iCloudに保存している場合は他端末からも検出できるようになります。</span></p>
     </div>
     <div class="faq-item">
-      <p class="faq-q"><span class="q-mark">Q</span>ログの整理・並び替えはどうすればいいですか？</p>
-      <p class="faq-a"><span class="a-mark">A</span>ログ右から左にスワイプするとお気に入り登録・削除ができます。<br>長押しすると全削除・選択削除ができ、ドラッグ＆ドロップで並び順を変更できます。</p>
+      <p class="faq-q"><span class="q-mark">Q</span><span id="q4">ログの整理・並び替えはどうすればいいですか？</span></p>
+      <p class="faq-a"><span class="a-mark">A</span><span id="a4">ログ右から左にスワイプするとお気に入り登録・削除ができます。<br>長押しすると全削除・選択削除ができ、ドラッグ＆ドロップで並び順を変更できます。</span></p>
     </div>
     <div class="faq-item">
-      <p class="faq-q"><span class="q-mark">Q</span>見た目をカスタマイズできますか？</p>
-      <p class="faq-a"><span class="a-mark">A</span>設定画面「背景デザイン」から背景色・文字色・背景画像を好みに変更できます。<br>また、「お気に入り」項目ではお気に入りにした楽曲の背景色を変更できます。</p>
+      <p class="faq-q"><span class="q-mark">Q</span><span id="q5">見た目をカスタマイズできますか？</span></p>
+      <p class="faq-a"><span class="a-mark">A</span><span id="a5">設定画面「背景デザイン」から背景色・文字色・背景画像を好みに変更できます。<br>また、「お気に入り」項目ではお気に入りにした楽曲の背景色を変更できます。</span></p>
     </div>
     <div class="faq-item">
-      <p class="faq-q"><span class="q-mark">Q</span>プレイリストの書き出し・読み込みはできますか？</p>
-      <p class="faq-a"><span class="a-mark">A</span>設定画面から記録したログをプレイリストとしてtxtファイル・CSVファイルとして書き出し・読み込みできます。</p>
+      <p class="faq-q"><span class="q-mark">Q</span><span id="q6">プレイリストの書き出し・読み込みはできますか？</span></p>
+      <p class="faq-a"><span class="a-mark">A</span><span id="a6">設定画面から記録したログをプレイリストとしてtxtファイル・CSVファイルとして書き出し・読み込みできます。</span></p>
     </div>
     <div class="faq-item">
-      <p class="faq-q"><span class="q-mark">Q</span>不具合の報告や機能の要望を送りたい</p>
-      <p class="faq-a"><span class="a-mark">A</span>不具合の報告はご使用のOSバージョンや発生手順を添えて下記のメールアドレスまでご連絡ください。</p>
+      <p class="faq-q"><span class="q-mark">Q</span><span id="q7">不具合の報告や機能の要望を送りたい</span></p>
+      <p class="faq-a"><span class="a-mark">A</span><span id="a7">不具合の報告はご使用のOSバージョンや発生手順を添えて下記のメールアドレスまでご連絡ください。</span></p>
     </div>
   </div>
 
   <div class="contact-card">
     <div>
-      <div class="label">お問い合わせ</div>
+      <div class="label" id="contactLabel">お問い合わせ</div>
       <div class="email">vdjamakasu@gmail.com</div>
     </div>
-    <a class="btn" href="mailto:vdjamakasu@gmail.com">メールを送る</a>
+    <a class="btn" href="mailto:vdjamakasu@gmail.com" id="sendEmailBtn">メールを送る</a>
   </div>
   
   <footer>
     <span>© 2026 DJLog</span>
-    <span><a href="privacy-policy.html">プライバシーポリシー</a></span>
-    <span><a href="mailto:vdjamakasu@gmail.com">お問い合わせ</a></span>
+    <span><a href="privacy-policy.html" id="privacyLink">プライバシーポリシー</a></span>
+    <span><a href="mailto:vdjamakasu@gmail.com" id="footerContactLink">お問い合わせ</a></span>
   </footer>
 </div>
+
+<script>
+const translations = {
+  ja: {
+    title: "サポート",
+    lede: "「DJLog」に関するご質問は、まず「よくある質問」をご確認ください。<br>解決しない場合や、不具合のご報告・機能のご要望は、下記の連絡先までお気軽にお問い合わせください。<br>※不具合のご報告の際は、ご使用のOSバージョンや発生手順を添えていただけますと、スムーズな対応が可能です。",
+    secTitle: "よくある質問",
+    q1: "曲が自動認識されません",
+    a1: "「設定」アプリ内のDJLogのマイクアクセスがオンになっているかご確認ください。<br>それでも認識しづらい場合は、アプリ内の認識間隔の設定を短くすると精度が上がることがあります。",
+    q2: "一般的な音楽認識では見つからない曲を記録したい",
+    a2: "「曲の解析」機能から手持ちのオーディオファイルを解析すると、その楽曲の解析データを端末内のデータに登録できます。<br>登録後は、自動で認識・記録されるようになります。",
+    q3: "記録したログ・解析データはどこに保存されますか？",
+    a3: "ご利用のiCloudアカウントに自動的に保存・同期されます。<br>同じApple IDでサインインしている他の端末からも同じログを確認できます。<br>解析したデータは「曲の解析」の右上のボタンから確認・削除が可能です。<br>音楽認識の際、DJLogフォルダ直下の解析データは必ず検索に使用されますが、DJLogフォルダの下層にフォルダ分けをすることにより、検索に使用するフォルダを選択できるようになります。<br>解析データは「曲の解析データの保存先」でiCloudとiPhone/iPad内に一括で移動することが可能です。iCloudに保存している場合は他端末からも検出できるようになります。",
+    q4: "ログの整理・並び替えはどうすればいいですか？",
+    a4: "ログ右から左にスワイプするとお気に入り登録・削除ができます。<br>長押しすると全削除・選択削除ができ、ドラッグ＆ドロップで並び順を変更できます。",
+    q5: "見た目をカスタマイズできますか？",
+    a5: "設定画面「背景デザイン」から背景色・文字色・背景画像を好みに変更できます。<br>また、「お気に入り」項目ではお気に入りにした楽曲の背景色を変更できます。",
+    q6: "プレイリストの書き出し・読み込みはできますか？",
+    a6: "設定画面から記録したログをプレイリストとしてtxtファイル・CSVファイルとして書き出し・読み込みできます。",
+    q7: "不具合の報告や機能の要望を送りたい",
+    a7: "不具合の報告はご使用のOSバージョンや発生手順を添えて下記のメールアドレスまでご連絡ください。",
+    contactLabel: "お問い合わせ",
+    sendEmailBtn: "メールを送る",
+    privacyLink: "プライバシーポリシー",
+    footerContactLink: "お問い合わせ"
+  },
+  en: {
+    title: "Support",
+    lede: "If you have any questions regarding DJLog, please check the FAQ first.<br>If your issue is not resolved, or if you have bug reports or feature requests, feel free to contact us below.<br>*When reporting bugs, please include your OS version and steps to reproduce for faster support.",
+    secTitle: "FREQUENTLY ASKED QUESTIONS",
+    q1: "Songs are not automatically recognized",
+    a1: "Please check if Microphone access for DJLog is enabled in your device Settings.<br>If recognition remains difficult, shortening the recognition interval setting in the app may improve accuracy.",
+    q2: "I want to record songs that aren't found by standard music recognition",
+    a2: "By analyzing your own audio files via the \"Song Analysis\" feature, you can register analysis data to your local device.<br>Once registered, songs can be automatically recognized and logged.",
+    q3: "Where are recorded logs and analysis data saved?",
+    a3: "Data is automatically saved and synced to your iCloud account.<br>You can view the same logs from other devices signed in with the same Apple ID.<br>Analyzed data can be viewed and deleted using the top-right button in \"Song Analysis\".<br>During recognition, analysis data directly under the DJLog folder is always searched. By organizing into subfolders within DJLog, you can select specific folders for searching.<br>You can bulk-move analysis data between iCloud and local storage in \"Analysis Data Location\". Saving to iCloud allows detection across other devices.",
+    q4: "How do I organize and reorder logs?",
+    a4: "Swipe right-to-left on a log to favorite or delete it.<br>Press and hold to delete selected or all logs, and drag and drop to reorder.",
+    q5: "Can I customize the appearance?",
+    a5: "You can change background color, text color, and background image in Settings > \"Background Design\".<br>You can also customize the background color for favorited tracks in the \"Favorites\" section.",
+    q6: "Can I export or import playlists?",
+    a6: "You can export and import recorded logs as playlist TXT or CSV files from the Settings screen.",
+    q7: "How can I submit bug reports or feature requests?",
+    a7: "For bug reports, please contact us at the email address below, including your OS version and reproduction steps.",
+    contactLabel: "Contact Us",
+    sendEmailBtn: "Send Email",
+    privacyLink: "Privacy Policy",
+    footerContactLink: "Contact Us"
+  },
+  zh: {
+    title: "支持",
+    lede: "关于“DJLog”如有疑问，请先查看“常见问题”。<br>如果未能解决，或需要报告故障、提出功能建议，请随时通过以下方式与我们联系。<br>※报告故障時，附上您的OS版本和发生步骤将有助于更顺畅地处理。",
+    secTitle: "常见问题",
+    q1: "无法自动识别歌曲",
+    a1: "请确认“设置”应用中DJLog的麦克风访问权限是否已开启。<br>如果仍然难以识别，缩短应用内的识别间隔设置可能会提高精度。",
+    q2: "想记录普通音乐识别找不到的歌曲",
+    a2: "通过“歌曲分析”功能分析您手头上的音频文件，即可将该歌曲的分析数据注册到设备中。<br>注册后，即可自动进行识别和记录。",
+    q3: "记录的日志和分析数据保存保存在哪里？",
+    a3: "数据会自动保存并同步到您的iCloud账户。<br>使用相同Apple ID登录的其他设备也可以查看相同的日志。<br>分析好的数据可以通过“歌曲分析”右上角的按钮进行查看和删除。<br>进行音乐识别时，DJLog根目录下的分析数据必然会被用于检索；如果在DJLog目录下创建子文件夹，则可以选择要用于检索的文件夹。<br>分析数据可在“歌曲分析数据保存位置”中在iCloud与iPhone/iPad本地之间批量移动。保存至iCloud后，其他设备也可以检测到。",
+    q4: "如何整理和排序日志？",
+    a4: "从右向左滑动日志可以添加收藏或删除。<br>长按可进行全选删除或选择删除，通过拖放操作可更改排序。",
+    q5: "可以自定义外观吗？",
+    a5: "在设置页面的“背景设计”中，可以根据喜好更改背景色、文字颜色和背景图片。<br>此外，在“收藏”项目里可以更改已收藏歌曲的背景色。",
+    q6: "可以导出/导入播放列表吗？",
+    a6: "可以在设置页面中将记录的日志作为txt文件或CSV文件导出或导入播放列表。",
+    q7: "想提交故障报告或功能建议",
+    a7: "如需报告故障，请附上您使用的OS版本及发生步骤，发送邮件至下方地址。",
+    contactLabel: "联系我们",
+    sendEmailBtn: "发送邮件",
+    privacyLink: "隐私政策",
+    footerContactLink: "联系我们"
+  },
+  ko: {
+    title: "지원",
+    lede: "DJLog에 관한 문의 사항은 먼저 '자주 묻는 질문'を 확인해 주세요.<br>문제가 해결되지 않거나 오류 제보, 기능 요청은 아래 연락처로 편하게 문의해 주시기 바랍니다.<br>※오류 제보 시 사용 중인 OS 버전과発生 절차を 함께 적어주시면 더 원활한 대응が 가능합니다.",
+    secTitle: "자주 묻는 질문",
+    q1: "곡이 자동으로 인식되지 않습니다",
+    a1: "'설정' 앱에서 DJLog의 마이크 접근 권한이 켜져 있는지 확인해 주세요.<br>그래도 인식이 잘 되지 않는 경우, 앱 내의 인식 간격 설정을 줄이면精度が 향상될 수 있습니다.",
+    q2: "일반적인 음악 인식으로 찾을 수 없는 곡を 기록하고 싶습니다",
+    a2: "'곡 분석' 기능에서 보유 중인 오디오 파일을 분석하면 해당 곡의 분석 데이터를 기기 내 데이터に 등록할 수 있습니다.<br>등록 후には 자동으로 인식 및 기록됩니다.",
+    q3: "기록된 로그와 분석 데이터는 어디에 저장되나요?",
+    a3: "사용 중인 iCloud 계정에 자동으로 저장 및 동기화됩니다.<br>동일한 Apple ID로 로그인한 다른 기기에서도 동일한 로그를 확인할 수 있습니다.<br>분석된 데이터는 '곡 분석' 우측 상단 버튼에서 확인 및 삭제가 가능합니다.<br>음악 인식 시 DJLog 폴더直下의 분석 데이터는 반드시 검색에 사용되지만, DJLog 폴더 하위에 폴더를分分け(분류)하면 검색에 사용할 폴더를 선택할 수 있게 됩니다.<br>분석 데이터는 '곡 분석 데이터 저장 위치'에서 iCloud와 iPhone/iPad 내로 일괄 이동이 가능합니다. iCloud에 저장한 경우 다른 기기에서도 감지할 수 있습니다.",
+    q4: "로그 정렬 및 순서 변경은 어떻게 하나요?",
+    a4: "로그를 오른쪽から 왼쪽으로 スワイプ(スワイプ)すると 즐겨찾기 등록/삭제가 가능합니다.<br>길게 누르면 전체 삭제/선택 삭제가 가능하며, 드래그 앤 드롭으로 순서를 변경할 수 있습니다.",
+    q5: "디자인을 커스텀할 수 있나요?",
+    a5: "설정 화면 '배경 디자인'에서 배경색, 글자색, 배경 이미지를 취향에 맞게 변경할 수 있습니다.<br>또한 '즐겨찾기' 항목에서는 즐겨찾기한 곡の 배경색을 변경할 수 있습니다.",
+    q6: "플레이리스트 내보내기/불러오기가 가능한가요?",
+    a6: "설정 화면에서 기록된 로그를 플레이리스트로 txt 파일, CSV 파일로 내보내기 및 불러오기를 할 수 있습니다.",
+    q7: "오류 제보나 기능 요청を 보내고 싶습니다",
+    a7: "오류 제보는 사용 중인 OS 버전과発生 절차を 첨부하여 아래 이메일 주소로 연락해 주세요.",
+    contactLabel: "문의하기",
+    sendEmailBtn: "이메일 보내기",
+    privacyLink: "개인정보処理방침",
+    footerContactLink: "문의하기"
+  },
+  es: {
+    title: "Soporte",
+    lede: "Si tiene alguna pregunta sobre DJLog, consulte primero las Preguntas frecuentes.<br>Si no resuelve su problema, o si desea reportar un fallo o solicitar funciones, no dude en contactarnos a continuación.<br>*Al reportar fallos, incluya la versión de su sistema operativo y los pasos para reproducirlo para una mejor atención.",
+    secTitle: "PREGUNTAS FRECUENTES",
+    q1: "Las canciones no se reconocen automáticamente",
+    a1: "Compruebe si el acceso al micrófono para DJLog está activado en los Ajustes de su dispositivo.<br>Si la detección sigue siendo difícil, reducir el intervalo de reconocimiento en la aplicación puede mejorar la precisión.",
+    q2: "Quiero registrar canciones que no se encuentran con el reconocimiento normal",
+    a2: "Al analizar sus propios archivos de audio mediante la función \"Análisis de canciones\", puede registrar los datos de análisis en su dispositivo.<br>Una vez registrados, se reconocerán y registrarán automáticamente.",
+    q3: "¿Dónde se guardan los registros y datos de análisis?",
+    a3: "Se guardan y sincronizan automáticamente en su cuenta de iCloud.<br>Puede ver los mismos registros desde otros dispositivos con la misma Apple ID.<br>Los datos analizados se pueden ver y eliminar mediante el botón superior derecho en \"Análisis de canciones\".<br>Durante el reconocimiento, los datos ubicados directamente en la carpeta DJLog siempre se utilizan para la búsqueda, pero al crear subcarpetas, puede seleccionar qué carpetas usar.<br>Puede mover datos entre iCloud y el dispositivo en \"Ubicación de datos de análisis\". Si los guarda en iCloud, se detectarán desde otros dispositivos.",
+    q4: "¿Cómo organizo y reordeno los registros?",
+    a4: "Deslice de derecha a izquierda en un registro para añadirlo a favoritos o eliminarlo.<br>Mantenga presionado para eliminar elementos seleccionados o todos, y arrastre para cambiar el orden.",
+    q5: "¿Puedo personalizar la apariencia?",
+    a5: "Puede cambiar el color de fondo, el color de texto y la imagen de fondo en Ajustes > \"Diseño de fondo\".<br>También puede cambiar el color de fondo de las canciones favoritas en la sección \"Favoritos\".",
+    q6: "¿Puedo exportar e importar listas de reproducción?",
+    a6: "Puede exportar e importar registros como archivos de lista de reproducción en formato TXT o CSV desde la pantalla de Ajustes.",
+    q7: "Quiero enviar un informe de fallos o sugerir funciones",
+    a7: "Para informes de fallos, contáctenos en la dirección de correo a continuación, indicando la versión de su SO y los pasos para reproducir el problema.",
+    contactLabel: "Contacto",
+    sendEmailBtn: "Enviar correo",
+    privacyLink: "Política de privacidad",
+    footerContactLink: "Contacto"
+  },
+  de: {
+    title: "Support",
+    lede: "Wenn Sie Fragen zu DJLog haben, lesen Sie bitte zuerst die häufig gestellten Fragen (FAQ).<br>Wenn Ihr Problem nicht gelöst wird oder Sie Fehler melden oder Funktionen vorschlagen möchten, kontaktieren Sie uns gerne unten.<br>*Bitte geben Sie bei Fehlermeldungen Ihre OS-Version und die Schritte zur Reproduktion an.",
+    secTitle: "HÄUFIG GESTELLTE FRAGEN",
+    q1: "Titel werden nicht automatisch erkannt",
+    a1: "Bitte prüfen Sie, ob der Mikrofonzugriff für DJLog in den Einstellungen Ihres Geräts aktiviert ist.<br>Wenn die Erkennung weiterhin schwierig ist, kann das Verkürzen des Intervalls in der App die Genauigkeit verbessern.",
+    q2: "Ich möchte Titel erfassen, die über die normale Musikerkennung nicht gefunden werden",
+    a2: "Über die Funktion „Song-Analyse“ können Sie eigene Audiodatei analysieren und die Daten auf Ihrem Gerät speichern.<br>Nach der Registrierung werden die Titel automatisch erkannt und protokolliert.",
+    q3: "Wo werden die Protokolle und Analysedaten gespeichert?",
+    a3: "Sie werden automatisch in Ihrem iCloud-Konto gespeichert und synchronisiert.<br>Sie können dieselben Protokolle auf anderen Geräten mit derselben Apple-ID anzeigen.<br>Analysierte Daten können über die Schaltfläche oben rechts unter „Song-Analyse“ angezeigt und gelöscht werden.<br>Bei der Erkennung werden Analysedaten direkt im DJLog-Ordner immer durchsucht. Durch Unterordner können Sie festlegen, welche Ordner durchsucht werden sollen.<br>Unter „Speicherort für Analysedaten“ können Sie Daten zwischen iCloud und dem Gerät verschieben.",
+    q4: "Wie organisiere und sortiere ich die Protokolle?",
+    a4: "Wischen Sie auf einem Eintrag von rechts nach links, um ihn als Favorit zu markieren oder zu löschen.<br>Gedrückt halten zum Löschen von Auswahlen oder allen Einträgen, und per Drag & Drop neu anordnen.",
+    q5: "Kann ich das Erscheinungsbild anpassen?",
+    a5: "Unter Einstellungen > „Hintergrunddesign“ können Sie Hintergrundfarbe, Textfarbe und Hintergrundbild anpassen.<br>Außerdem können Sie im Bereich „Favoriten“ die Farbe für Lieblings Titel ändern.",
+    q6: "Kann ich Wiedergabelisten exportieren oder importieren?",
+    a6: "Sie können aufgezeichnete Protokolle über den Einstellungsbildschirm als TXT- oder CSV-Dateien exportieren und importieren.",
+    q7: "Fehlermeldung oder Funktionswunsch senden",
+    a7: "Für Fehlermeldungen kontaktieren Sie uns bitte unter der unten stehenden E-Mail-Adresse mit Ihrer OS-Version und den Schritten zur Reproduktion.",
+    contactLabel: "Kontakt",
+    sendEmailBtn: "E-Mail senden",
+    privacyLink: "Datenschutz-Bestimmungen",
+    footerContactLink: "Kontakt"
+  },
+  fr: {
+    title: "Support",
+    lede: "Si vous avez des questions sur DJLog, veuillez d'abord consulter la FAQ.<br>Si le problème persiste, ou pour signaler un bogue ou suggérer une fonctionnalité, contactez-nous ci-dessous.<br>*Pour les rapports de bug, merci d'inclure votre version d'OS et les étapes pour reproduire le problème.",
+    secTitle: "FOIRE AUX QUESTIONS",
+    q1: "Les morceaux ne sont pas reconnus automatiquement",
+    a1: "Veuillez vérifier si l'accès au micro pour DJLog est activé dans les Réglages de votre appareil.<br>Si la reconnaissance reste difficile, réduire l'intervalle dans l'application peut améliorer la précision.",
+    q2: "Je souhaite enregistrer des morceaux introuvables par la reconnaissance classique",
+    a2: "En analysant vos propres fichiers audio via la fonction \"Analyse de morceau\", vous pouvez enregistrer les données d'analyse dans votre appareil.<br>Une fois enregistrés, ils seront reconnus et enregistrés automatiquement.",
+    q3: "Où sont sauvegardés les journaux et les données d'analyse ?",
+    a3: "Ils sont automatiquement enregistrés et synchronisés sur votre compte iCloud.<br>Vous pouvez consulter les mêmes journaux sur d'autres appareils avec le même Apple ID.<br>Les données analysées peuvent être consultées et supprimées via le bouton en haut à droite dans \"Analyse de morceau\".<br>Lors de la reconnaissance, les données sous le dossier DJLog sont toujours utilisées, mais en créant des sous-dossiers, vous pouvez choisir lesquels utiliser.<br>Vous pouvez déplacer les données entre iCloud et l'appareil dans \"Emplacement des données d'analyse\".",
+    q4: "Comment organiser et réordonner les journaux ?",
+    a4: "Glissez de droite à gauche sur un journal pour le mettre en favori ou le supprimer.<br>Maintenez appuyé pour supprimer la sélection ou tout supprimer, puis glissez-déposez pour réordonner.",
+    q5: "Puis-je personnaliser l'apparence ?",
+    a5: "Vous pouvez modifier la couleur de fond, la couleur du texte et l'image de fond dans Réglages > \"Design de fond\".<br>Vous pouvez aussi personnaliser la couleur de fond des morceaux favoris.",
+    q6: "Puis-je exporter et importer des playlists ?",
+    a6: "Vous pouvez exporter et importer les journaux sous forme de fichiers TXT ou CSV depuis l'écran Réglages.",
+    q7: "Envoyer un rapport de bug ou une suggestion",
+    a7: "Pour les rapports de bug, contactez-nous à l'adresse e-mail ci-dessous en précisant la version de votre OS et les étapes de reproduction.",
+    contactLabel: "Contact",
+    sendEmailBtn: "Envoyer un e-mail",
+    privacyLink: "Politique de confidentialité",
+    footerContactLink: "Contact"
+  }
+};
+
+const langSelect = document.getElementById('langSelect');
+
+function updateLanguage(lang) {
+  const data = translations[lang] || translations.ja;
+  
+  document.getElementById('pageTitle').innerHTML = data.title;
+  document.getElementById('pageLede').innerHTML = data.lede;
+  document.getElementById('secTitle').innerHTML = data.secTitle;
+  
+  for (let i = 1; i <= 7; i++) {
+    document.getElementById(`q${i}`).innerHTML = data[`q${i}`];
+    document.getElementById(`a${i}`).innerHTML = data[`a${i}`];
+  }
+  
+  document.getElementById('contactLabel').innerHTML = data.contactLabel;
+  document.getElementById('sendEmailBtn').innerHTML = data.sendEmailBtn;
+  document.getElementById('privacyLink').innerHTML = data.privacyLink;
+  document.getElementById('footerContactLink').innerHTML = data.footerContactLink;
+  
+  document.documentElement.lang = lang === 'zh' ? 'zh-Hans' : lang;
+}
+
+langSelect.addEventListener('change', (e) => {
+  updateLanguage(e.target.value);
+});
+
+// ブラウザの言語設定を初期選択に反映（任意）
+const userLang = (navigator.language || navigator.userLanguage).substring(0, 2);
+if (translations[userLang]) {
+  langSelect.value = userLang;
+  updateLanguage(userLang);
+}
+</script>
 
 </body>
 </html>
