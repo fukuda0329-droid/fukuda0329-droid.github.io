@@ -97,7 +97,18 @@
     letter-spacing:.04em;
   }
 
-  /* 言語切替ドロップダウン */
+  /* 言語切替エリア */
+  .lang-switcher {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .lang-label {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-2);
+    white-space: nowrap;
+  }
   .lang-select-wrap {
     position: relative;
   }
@@ -273,16 +284,19 @@
       </div>
     </div>
     
-    <div class="lang-select-wrap">
-      <select id="langSelect" class="lang-select">
-        <option value="ja">日本語</option>
-        <option value="en">English</option>
-        <option value="zh">日本語 (簡体字)</option>
-        <option value="ko">한국어</option>
-        <option value="es">Español</option>
-        <option value="de">Deutsch</option>
-        <option value="fr">Français</option>
-      </select>
+    <div class="lang-switcher">
+      <span class="lang-label">Language：</span>
+      <div class="lang-select-wrap">
+        <select id="langSelect" class="lang-select">
+          <option value="ja">日本語</option>
+          <option value="en">English</option>
+          <option value="zh">简体中文</option>
+          <option value="ko">한국어</option>
+          <option value="es">Español</option>
+          <option value="de">Deutsch</option>
+          <option value="fr">Français</option>
+        </select>
+      </div>
     </div>
   </header>
 
@@ -413,25 +427,25 @@ const translations = {
   },
   ko: {
     title: "지원",
-    lede: "DJLog에 관한 문의 사항은 먼저 '자주 묻는 질문'を 확인해 주세요.<br>문제가 해결되지 않거나 오류 제보, 기능 요청은 아래 연락처로 편하게 문의해 주시기 바랍니다.<br>※오류 제보 시 사용 중인 OS 버전과発生 절차を 함께 적어주시면 더 원활한 대응が 가능합니다.",
+    lede: "DJLog에 관한 문의 사항은 먼저 '자주 묻는 질문'을 확인해 주세요.<br>문제가 해결되지 않거나 오류 제보, 기능 요청은 아래 연락처로 편하게 문의해 주시기 바랍니다.<br>※오류 제보 시 사용 중인 OS 버전과 발생 절차를 함께 적어주시면 더 원활한 대응이 가능합니다.",
     secTitle: "자주 묻는 질문",
     q1: "곡이 자동으로 인식되지 않습니다",
-    a1: "'설정' 앱에서 DJLog의 마이크 접근 권한이 켜져 있는지 확인해 주세요.<br>그래도 인식이 잘 되지 않는 경우, 앱 내의 인식 간격 설정을 줄이면精度が 향상될 수 있습니다.",
-    q2: "일반적인 음악 인식으로 찾을 수 없는 곡を 기록하고 싶습니다",
-    a2: "'곡 분석' 기능에서 보유 중인 오디오 파일을 분석하면 해당 곡의 분석 데이터를 기기 내 데이터に 등록할 수 있습니다.<br>등록 후には 자동으로 인식 및 기록됩니다.",
+    a1: "'설정' 앱에서 DJLog의 마이크 접근 권한이 켜져 있는지 확인해 주세요.<br>그래도 인식이 잘 되지 않는 경우, 앱 내의 인식 간격 설정을 줄이면精度가 향상될 수 있습니다.",
+    q2: "일반적인 음악 인식으로 찾을 수 없는 곡을 기록하고 싶습니다",
+    a2: "'곡 분석' 기능에서 보유 중인 오디오 파일을 분석하면 해당 곡의 분석 데이터를 기기 내 데이터에 등록할 수 있습니다.<br>등록 후에는 자동으로 인식 및 기록됩니다.",
     q3: "기록된 로그와 분석 데이터는 어디에 저장되나요?",
-    a3: "사용 중인 iCloud 계정에 자동으로 저장 및 동기화됩니다.<br>동일한 Apple ID로 로그인한 다른 기기에서도 동일한 로그를 확인할 수 있습니다.<br>분석된 데이터는 '곡 분석' 우측 상단 버튼에서 확인 및 삭제가 가능합니다.<br>음악 인식 시 DJLog 폴더直下의 분석 데이터는 반드시 검색에 사용되지만, DJLog 폴더 하위에 폴더를分分け(분류)하면 검색에 사용할 폴더를 선택할 수 있게 됩니다.<br>분석 데이터는 '곡 분석 데이터 저장 위치'에서 iCloud와 iPhone/iPad 내로 일괄 이동이 가능합니다. iCloud에 저장한 경우 다른 기기에서도 감지할 수 있습니다.",
+    a3: "사용 중인 iCloud 계정에 자동으로 저장 및 동기화됩니다.<br>동일한 Apple ID로 로그인한 다른 기기에서도 동일한 로그를 확인할 수 있습니다.<br>분석된 데이터는 '곡 분석' 우측 상단 버튼에서 확인 및 삭제가 가능합니다.<br>음악 인식 시 DJLog 폴더 직하의 분석 데이터는 반드시 검색에 사용되지만, DJLog 폴더 하위에 폴더를 분류하면 검색에 사용할 폴더를 선택할 수 있게 됩니다.<br>분석 데이터는 '곡 분석 데이터 저장 위치'에서 iCloud와 iPhone/iPad 내로 일괄 이동이 가능합니다. iCloud에 저장한 경우 다른 기기에서도 감지할 수 있습니다.",
     q4: "로그 정렬 및 순서 변경은 어떻게 하나요?",
-    a4: "로그를 오른쪽から 왼쪽으로 スワイプ(スワイプ)すると 즐겨찾기 등록/삭제가 가능합니다.<br>길게 누르면 전체 삭제/선택 삭제가 가능하며, 드래그 앤 드롭으로 순서를 변경할 수 있습니다.",
+    a4: "로그를 오른쪽에서 왼쪽으로 스ワイプ하면 즐겨찾기 등록/삭제가 가능합니다.<br>길게 누르면 전체 삭제/선택 삭제가 가능하며, 드래그 앤 드롭으로 순서를 변경할 수 있습니다.",
     q5: "디자인을 커스텀할 수 있나요?",
-    a5: "설정 화면 '배경 디자인'에서 배경색, 글자색, 배경 이미지를 취향에 맞게 변경할 수 있습니다.<br>또한 '즐겨찾기' 항목에서는 즐겨찾기한 곡の 배경색을 변경할 수 있습니다.",
+    a5: "설정 화면 '배경 디자인'에서 배경색, 글자색, 배경 이미지를 취향에 맞게 변경할 수 있습니다.<br>또한 '즐겨찾기' 항목에서는 즐겨찾기한 곡의 배경색을 변경할 수 있습니다.",
     q6: "플레이리스트 내보내기/불러오기가 가능한가요?",
     a6: "설정 화면에서 기록된 로그를 플레이리스트로 txt 파일, CSV 파일로 내보내기 및 불러오기를 할 수 있습니다.",
-    q7: "오류 제보나 기능 요청を 보내고 싶습니다",
-    a7: "오류 제보는 사용 중인 OS 버전과発生 절차を 첨부하여 아래 이메일 주소로 연락해 주세요.",
+    q7: "오류 제보나 기능 요청을 보내고 싶습니다",
+    a7: "오류 제보는 사용 중인 OS 버전과 발생 절차를 첨부하여 아래 이메일 주소로 연락해 주세요.",
     contactLabel: "문의하기",
     sendEmailBtn: "이메일 보내기",
-    privacyLink: "개인정보処理방침",
+    privacyLink: "개인정보 처리방침",
     footerContactLink: "문의하기"
   },
   es: {
@@ -531,7 +545,7 @@ langSelect.addEventListener('change', (e) => {
   updateLanguage(e.target.value);
 });
 
-// ブラウザの言語設定を初期選択に反映（任意）
+// ブラウザの言語設定を初期選択に反映
 const userLang = (navigator.language || navigator.userLanguage).substring(0, 2);
 if (translations[userLang]) {
   langSelect.value = userLang;
