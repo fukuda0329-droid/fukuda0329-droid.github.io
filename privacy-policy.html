@@ -441,7 +441,7 @@
       th_purpose: "利用目的",
       th_storage: "保存・送信先",
       row1_item: "マイク(周囲の音声)",
-      row1_purpose: '再生中の楽曲を自動認識するため、また、ユーザー自身が手持ちの楽曲を解析し記録可能にするために使用します。<span class="tag">端末内で処理</span>',
+      row1_purpose: '再生中の楽曲を自動認識するため、また、ユーザー自身が手持ちの楽曲を解析し記録可能にするために使用します。<span class="tag" data-i18n="tag_on_device">端末内で処理</span>',
       row1_storage: "音声データを本アプリ運営者のサーバーへ送信・保存することはありません。認識・解析処理は端末上で完結します。",
       row2_item: "楽曲ログ情報<br>(曲名・アーティスト名・記録日時など)",
       row2_purpose: "ユーザーが記録したセットリストをアプリ内および複数端末間で保持・同期するために使用します。",
@@ -450,7 +450,7 @@
       row3_purpose: "該当楽曲のアートワーク画像を取得するために使用します。",
       row3_storage: "Apple社のiTunes Search APIへ送信されます。個人を特定する情報は含まれません。",
       row4_item: "デバイスID<br>(IDFA)",
-      row4_purpose: 'Google Mobile Ads(Google AdMob)による広告配信および広告ターゲティングのために使用します。<span class="tag">広告配信</span>',
+      row4_purpose: 'Google Mobile Ads(Google AdMob)による広告配信および広告ターゲティングのために使用します。<span class="tag" data-i18n="tag_ad_delivery">広告配信</span>',
       row4_storage: "Google社(Google Mobile Ads/AdMob)へ送信されます。Googleのプライバシーポリシーに従い、広告配信と広告パフォーマンス測定に使用されます。",
       row5_item: "端末の利用状況情報",
       row5_purpose: "Google Mobile Adsの広告ターゲティング精度向上、および広告パフォーマンス測定のために使用します。",
@@ -492,12 +492,12 @@
       meta_target_app: "DJ Log (iOS)",
       lede: '"DJ Log" (hereinafter referred to as "this App") is an iOS application designed to record tracks played during DJ performances. This Privacy Policy explains the types of information collected, the purpose of use, and where the data is stored. This App uses an ad delivery platform (Google Mobile Ads), which collects device identifiers and related data.',
       sec1_title: "Information Collected and Purpose of Use",
-      sec1_desc: "Information collected by this App is used solely to provide its core functionality (recording and managing track logs). The three categories of collected information are as follows:",
+      sec1_desc: "Information collected by this App is used solely to provide its core functionality (recording and managing track logs). The categories of collected information are as follows:",
       th_info_type: "Information Type",
       th_purpose: "Purpose of Use",
       th_storage: "Storage & Transmission",
       row1_item: "Microphone (Ambient Audio)",
-      row1_purpose: 'Used for automatic recognition of currently playing tracks, and to allow users to analyze and log their audio files.<span class="tag">On-Device Processing</span>',
+      row1_purpose: 'Used for automatic recognition of currently playing tracks, and to allow users to analyze and log their audio files.<span class="tag" data-i18n="tag_on_device">On-Device Processing</span>',
       row1_storage: "Audio data is never transmitted to or stored on the app operator's servers. Recognition and analysis are performed entirely on-device.",
       row2_item: "Track Log Data<br>(Track Name, Artist, Timestamp, etc.)",
       row2_purpose: "Used to retain and synchronize recorded setlists within the app and across multiple user devices.",
@@ -506,7 +506,7 @@
       row3_purpose: "Used to fetch cover artwork images for recorded tracks.",
       row3_storage: "Transmitted to Apple's iTunes Search API. No personally identifiable information is included.",
       row4_item: "Device Identifier<br>(IDFA)",
-      row4_purpose: 'Used for ad delivery and ad targeting via Google Mobile Ads (Google AdMob).<span class="tag">Ad Delivery</span>',
+      row4_purpose: 'Used for ad delivery and ad targeting via Google Mobile Ads (Google AdMob).<span class="tag" data-i18n="tag_ad_delivery">Ad Delivery</span>',
       row4_storage: "Transmitted to Google LLC (Google Mobile Ads/AdMob). Used for ad serving and measuring ad performance in accordance with Google's Privacy Policy.",
       row5_item: "Device Usage Data",
       row5_purpose: "Used to improve ad targeting accuracy and measure ad performance via Google Mobile Ads.",
@@ -543,7 +543,7 @@
   function switchLanguage(lang) {
     const data = i18nData[lang] || i18nData.ja;
 
-    // data-i18n を持つ全要素のテキスト/HTMLを切り替え
+    // 1. data-i18n を持つ要素のテキスト/HTMLを切替
     document.querySelectorAll('[data-i18n]').forEach(el => {
       const key = el.getAttribute('data-i18n');
       if (data[key] !== undefined) {
@@ -552,6 +552,15 @@
         } else {
           el.innerHTML = data[key];
         }
+      }
+    });
+
+    // 2. data-i18n 内のネストされた要素（タグ等）の再読み込み処理
+    // row1_purpose や row4_purpose の中に含まれるタグ要素も個別に適用
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (data[key] !== undefined && el.tagName !== 'TITLE') {
+        el.innerHTML = data[key];
       }
     });
 
