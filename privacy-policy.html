@@ -288,14 +288,14 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Zen+Kaku Gothic New:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Zen+Kaku+Gothic+New:wght@500;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
 <div class="wrap">
   <!-- 右上の言語ドロップダウン -->
   <div class="lang-switcher">
-    <span class="lang-label" data-i18n="lang_label">Language：</span>
+    <span class="lang-label" data-i18n="lang_label">Language:</span>
     <select id="langSelect" class="lang-select" onchange="switchLanguage(this.value)">
       <option value="ja">日本語</option>
       <option value="en">English</option>
@@ -438,7 +438,7 @@
   const i18nData = {
     ja: {
       doc_title: "DJLog プライバシーポリシー",
-      lang_label: "言語：",
+      lang_label: "Language:",
       title: "プライバシーポリシー",
       meta_effective_label: "制定日:",
       meta_effective_date: "2026年9月11日",
@@ -495,7 +495,7 @@
     },
     en: {
       doc_title: "DJLog Privacy Policy",
-      lang_label: "Language：",
+      lang_label: "Language:",
       title: "Privacy Policy",
       meta_effective_label: "Effective Date:",
       meta_effective_date: "September 11, 2026",
@@ -552,7 +552,7 @@
     },
     zh: {
       doc_title: "DJLog 隐私政策",
-      lang_label: "语言：",
+      lang_label: "Language:",
       title: "隐私政策",
       meta_effective_label: "生效日期:",
       meta_effective_date: "2026年9月11日",
@@ -609,7 +609,7 @@
     },
     ko: {
       doc_title: "DJLog 개인정보処理方針",
-      lang_label: "언어：",
+      lang_label: "Language:",
       title: "개인정보処理方針",
       meta_effective_label: "제정일:",
       meta_effective_date: "2026년 9월 11일",
@@ -666,7 +666,7 @@
     },
     es: {
       doc_title: "DJLog Política de Privacidad",
-      lang_label: "Idioma：",
+      lang_label: "Language:",
       title: "Política de Privacidad",
       meta_effective_label: "Fecha de entrada en vigor:",
       meta_effective_date: "11 de septiembre de 2026",
@@ -679,51 +679,51 @@
       sec1_desc: "La información recopilada por esta Aplicación se utiliza únicamente para proporcionar su funcionalidad principal (registrar y gestionar historiales de pistas). Las categorías de información recopilada son las siguientes:",
       th_info_type: "Tipo de información",
       th_purpose: "Propósito de uso",
-      th_storage: "Almacenamiento y envío",
+      th_storage: "Almacenamiento y transmisión",
       row1_item: "Micrófono (Audio ambiental)",
-      row1_purpose: 'Se utiliza para el reconocimiento automático de las canciones en reproducción y para permitir a los usuarios analizar y registrar sus propios archivos de audio.<span class="tag" data-i18n="tag_on_device">Procesamiento en el dispositivo</span>',
-      row1_storage: "Los datos de audio nunca se transmiten ni se almacenan en los servidores del operador de la aplicación. El procesamiento de reconocimiento y análisis se realiza completamente en el dispositivo.",
-      row2_item: "Datos de registro de pistas<br>(Nombre de la pista, artista, fecha/hora, etc.)",
-      row2_purpose: "Se utiliza para conservar y sincronizar las listas de temas registradas dentro de la aplicación y entre múltiples dispositivos del usuario.",
+      row1_purpose: 'Se utiliza para el reconocimiento automático de las pistas que se están reproduciendo y para permitir a los usuarios analizar y registrar sus archivos de audio.<span class="tag" data-i18n="tag_on_device">Procesamiento en el dispositivo</span>',
+      row1_storage: "Los datos de audio nunca se transmiten ni se almacenan en los servidores del operador de la aplicación. El reconocimiento y el análisis se realizan íntegramente en el dispositivo.",
+      row2_item: "Datos del historial de pistas<br>(Nombre de la pista, artista, fecha/hora, etc.)",
+      row2_purpose: "Se utiliza para conservar y sincronizar las listas de canciones registradas dentro de la aplicación y entre varios dispositivos del usuario.",
       row2_storage: "Se almacena de forma segura en la cuenta personal de iCloud del usuario a través de iCloud (CloudKit) de Apple. El operador de la aplicación no puede ver ni acceder a estos datos.",
-      row3_item: "Palabras clave de búsqueda (Nombre de pista)",
-      row3_purpose: "Se utiliza para obtener las imágenes de portada (carátulas) de las pistas registradas.",
-      row3_storage: "Se transmite a la API de búsqueda de iTunes de Apple. No se incluye ninguna información de identificación personal.",
-      row4_item: "Identificador del dispositivo<br>(IDFA)",
-      row4_purpose: 'Se utiliza para la entrega de anuncios y la segmentación publicitaria a través de Google Mobile Ads (Google AdMob).<span class="tag" data-i18n="tag_ad_delivery">Entrega de anuncios</span>',
-      row4_storage: "Se transmite a Google LLC (Google Mobile Ads/AdMob). Se utiliza para servir anuncios y medir su rendimiento de acuerdo con la Política de Privacidad de Google.",
-      row5_item: "Información sobre el uso del dispositivo",
-      row5_purpose: "Se utiliza para mejorar la precisión de la segmentación publicitaria y medir el rendimiento de los anuncios a través de Google Mobile Ads.",
+      row3_item: "Palabras clave de búsqueda (Nombres de pistas)",
+      row3_purpose: "Se utiliza para obtener las imágenes de portada de las pistas registradas.",
+      row3_storage: "Se transmite a la API de búsqueda de iTunes de Apple. No se incluye información de identificación personal.",
+      row4_item: "Identificador de dispositivo<br>(IDFA)",
+      row4_purpose: 'Se utiliza para la entrega de anuncios y la personalización de anuncios a través de Google Mobile Ads (Google AdMob).<span class="tag" data-i18n="tag_ad_delivery">Entrega de anuncios</span>',
+      row4_storage: "Se transmite a Google LLC (Google Mobile Ads/AdMob). Se utiliza para la publicación de anuncios y la medición del rendimiento publicitario de acuerdo con la Política de Privacidad de Google.",
+      row5_item: "Datos de uso del dispositivo",
+      row5_purpose: "Se utiliza para mejorar la precisión de la personalización de anuncios y medir el rendimiento publicitario a través de Google Mobile Ads.",
       row5_storage: "Se transmite a Google LLC (Google Mobile Ads/AdMob).",
       tag_on_device: "En el dispositivo",
-      tag_ad_delivery: "Publicidad",
-      sec1_callout: "El acceso al micrófono solo se realiza cuando el usuario otorga un permiso explícito a través del diálogo del sistema iOS. Esta Aplicación no funciona en segundo plano; el uso del micrófono se limita estrictamente al uso activo de la aplicación.",
+      tag_ad_delivery: "Entrega de anuncios",
+      sec1_callout: "El acceso al micrófono solo se produce cuando el usuario otorga el permiso explícito a través del cuadro de diálogo del sistema iOS. Esta Aplicación no funciona en segundo plano; el uso del micrófono se limita estrictamente al uso activo de la aplicación.",
       sec2_title: "Información no recopilada",
-      sec2_desc: "Esta Aplicación no recopila ni reúne la siguiente información (para la recopilación de datos de Google Mobile Ads, consulte la Sección 05 a continuación):",
-      sec2_item1: "Información de registro identificable personalmente, como nombre completo, dirección de correo electrónico o número de teléfono (esta Aplicación no requiere el registro de una cuenta).",
+      sec2_desc: "Esta Aplicación no recopila ni recopila la siguiente información (para la recopilación de datos de Google Mobile Ads, consulte la Sección 05 a continuación):",
+      sec2_item1: "Información de identificación personal como nombre completo, dirección de correo electrónico o número de teléfono (esta Aplicación no requiere registro de cuenta).",
       sec2_item2: "Datos personales en el dispositivo no relacionados con las funciones de la aplicación, como contactos, biblioteca de fotos o datos de ubicación.",
-      sec2_item3: "SDK de análisis propietarios o herramientas de seguimiento de terceros (excluyendo el seguimiento de anuncios de terceros a través de Google Mobile Ads).",
+      sec2_item3: "SDK de análisis propietario o herramientas de seguimiento (excluyendo el seguimiento de anuncios de terceros a través de Google Mobile Ads).",
       sec3_title: "Provisión a terceros",
-      sec3_desc: "Esta Aplicación no vende ni proporciona la información recopilada a terceros. Como se señaló anteriormente, los datos de registro de pistas se almacenan en la cuenta personal de iCloud del usuario, y las búsquedas de carátulas solo se comunican con la API pública de búsqueda de iTunes de Apple sin transmitir información personal.",
+      sec3_desc: "Esta Aplicación no vende ni proporciona información recopilada a terceros. Como se señaló anteriormente, los datos del historial de pistas se almacenan en la cuenta personal de iCloud del usuario y las solicitudes de portadas utilizan la API pública de búsqueda de iTunes de Apple sin transmitir información personal.",
       sec4_title: "Eliminación de datos",
-      sec4_desc: "Los datos de registro de pistas se pueden eliminar mediante acciones de eliminación dentro de la aplicación, desactivando la sincronización de iCloud en la Configuración de iOS o desinstalando la Aplicación. No quedan datos de usuario en los servidores operados por el propietario de la aplicación.",
+      sec4_desc: "Los datos del historial de pistas se pueden eliminar mediante acciones de eliminación en la aplicación, desactivando la sincronización de iCloud en la Configuración de iOS o desinstalando la Aplicación. No quedan datos de usuario en los servidores operados por el propietario de la aplicación.",
       sec5_title: "Acerca de Google Mobile Ads",
-      sec5_p1: 'Esta Aplicación utiliza "Google Mobile Ads (AdMob)", una plataforma de publicidad proporcionada por Google LLC. Google Mobile Ads recopila y utiliza la siguiente información para la entrega de anuncios y análisis de rendimiento:',
-      sec5_item1: "Identificadores de dispositivo (IDFA)",
-      sec5_item2: "Información de uso del dispositivo",
-      sec5_item3: "Información de interacción con anuncios",
-      sec5_p2: 'Esta información se utiliza para entregar anuncios relevantes y medir su rendimiento. Los usuarios pueden restringir el seguimiento de esta Aplicación en iOS desde "Configuración" -> "Privacidad y seguridad" -> "Rastreo". Para obtener más detalles, consulte la <a href="https://policies.google.com/privacy" style="color:var(--accent-2);font-weight:600;text-decoration:none;" target="_blank" rel="noopener">Política de Privacidad de Google</a>.',
-      sec6_title: "Privacidad infantil",
+      sec5_p1: 'Esta Aplicación utiliza "Google Mobile Ads (AdMob)", una plataforma publicitaria proporcionada por Google LLC. Google Mobile Ads recopila y utiliza la siguiente información para la publicación de anuncios y el análisis de rendimiento:',
+      sec5_item1: "Identificadores de dispositivos (IDFA)",
+      sec5_item2: "Datos de uso del dispositivo",
+      sec5_item3: "Datos de interacción con anuncios",
+      sec5_p2: 'Esta información se utiliza para ofrecer anuncios relevantes y medir el rendimiento publicitario. Los usuarios pueden restringir el seguimiento de esta Aplicación en la "Configuración" de iOS -> "Privacidad y seguridad" -> "Rastreo". Para obtener más detalles, revise la <a href="https://policies.google.com/privacy" style="color:var(--accent-2);font-weight:600;text-decoration:none;" target="_blank" rel="noopener">Política de Privacidad de Google</a>.',
+      sec6_title: "Privacidad de los niños",
       sec6_desc: "Esta Aplicación no está dirigida a niños y no recopilamos a sabiendas información personal de niños de ninguna edad.",
       sec7_title: "Cambios en esta política",
-      sec7_desc: "Esta Política de Privacidad puede actualizarse sin previo aviso debido a revisiones legales o nuevas funciones de la aplicación. Los términos actualizados entrarán en vigor al ser publicados en esta página, lo cual se indicará mediante la 'Fecha de última actualización'.",
-      sec8_title: "Contacto",
+      sec7_desc: "Esta Política de Privacidad se puede actualizar sin previo aviso debido a revisiones legales o nuevas funciones de la aplicación. Los términos actualizados entran en vigor tras su publicación en esta página, como se indica en la fecha de 'Última actualización'.",
+      sec8_title: "Contáctenos",
       sec8_desc: "Para cualquier consulta sobre esta Política de Privacidad o las prácticas de privacidad de esta Aplicación, contáctenos en:",
       footer_contact: "Contacto"
     },
     de: {
       doc_title: "DJLog Datenschutzrichtlinie",
-      lang_label: "Sprache：",
+      lang_label: "Language:",
       title: "Datenschutzrichtlinie",
       meta_effective_label: "Inkrafttreten:",
       meta_effective_date: "11. September 2026",
@@ -731,164 +731,138 @@
       meta_updated_date: "17. September 2026",
       meta_target_label: "Betroffene App:",
       meta_target_app: "DJLog (iOS)",
-      lede: '„DJLog“ (nachfolgend „diese App“) ist eine iOS-Anwendung zur Erfassung von Titeln, die während eines DJ-Sets gespielt werden. Diese Datenschutzrichtlinie erläutert die Art der erfassten Informationen, deren Verwendungszweck und den Speicherort der Daten. Diese App nutzt eine Werbeplattform (Google Mobile Ads), die im Rahmen dieses Prozesses Gerätekennungen und zugehörige Daten erfasst.',
+      lede: '"DJLog" (nachfolgend "diese App") ist eine iOS-Anwendung zum Aufzeichnen von Titeln, die während DJ-Auftritten gespielt werden. Diese Datenschutzrichtlinie erläutert die Arten der erfassten Informationen, den Verwendungszweck und den Speicherort der Daten. Diese App nutzt eine Werbeplattform (Google Mobile Ads), die Geräte-IDs und zugehörige Daten erfasst.',
       sec1_title: "Erfasste Informationen und Verwendungszweck",
-      sec1_desc: "Die von dieser App erfassten Informationen werden ausschließlich zur Bereitstellung ihrer Kernfunktionalität (Erfassung und Verwaltung von Titellogbuchdaten) verwendet. Die Kategorien der erfassten Informationen sind wie folgt:",
-      th_info_type: "Art der Information",
+      sec1_desc: "Die von dieser App erfassten Informationen werden ausschließlich zur Bereitstellung der Kernfunktionalität (Aufzeichnung und Verwaltung von Titellisten) verwendet:",
+      th_info_type: "Informationsart",
       th_purpose: "Verwendungszweck",
       th_storage: "Speicherung & Übertragung",
-      row1_item: "Mikrofon (Umgebungs-Audio)",
-      row1_purpose: 'Wird zur automatischen Erkennung aktuell gespielter Titel verwendet sowie dazu, Nutzern die Analyse und Protokollierung eigener Titel zu ermöglichen.<span class="tag" data-i18n="tag_on_device">Verarbeitung auf dem Gerät</span>',
-      row1_storage: "Audiodaten werden niemals an Server des App-Betreibers übertragen oder dort gespeichert. Der Erkennungs- und Analyseprozess erfolgt vollständig auf dem Gerät.",
-      row2_item: "Titel-Protokolldaten<br>(Titelname, Künstler, Zeitstempel etc.)",
-      row2_purpose: "Wird verwendet, um aufคำgezeichnete Setlists innerhalb der App und über mehrere Geräte des Nutzers hinweg zu speichern und zu synchronisieren.",
-      row2_storage: "Wird über iCloud (CloudKit) von Apple sicher im persönlichen iCloud-Konto des Nutzers gespeichert. Der App-Betreiber kann diese Daten weder einsehen noch darauf zugreifen.",
-      row3_item: "Suchbegriffe (Titelnamen etc.)",
-      row3_purpose: "Wird verwendet, um Cover-Artworks für die erfassten Titel abzurufen.",
-      row3_storage: "Wird an die iTunes Search API von Apple übertragen. Es werden keine personenbezogenen Daten übermittelt.",
+      row1_item: "Mikrofon (Umgebungsaudio)",
+      row1_purpose: 'Wird zur automatischen Erkennung aktuell gespielter Titel verwendet sowie dazu, Benutzern das Analysieren und Aufzeichnen eigener Audiodateien zu ermöglichen.<span class="tag" data-i18n="tag_on_device">Verarbeitung auf dem Gerät</span>',
+      row1_storage: "Audiodaten werden niemals an Server des App-Betreibers übertragen oder dort gespeichert. Die Erkennung und Analyse erfolgen vollständig auf dem Gerät.",
+      row2_item: "Titel-Protokolldaten<br>(Titelname, Künstler, Zeitstempel usw.)",
+      row2_purpose: "Wird verwendet, um aufgezeichnete Setlists innerhalb der App und über mehrere Geräte des Benutzers hinweg zu speichern und zu synchronisieren.",
+      row2_storage: "Sicher im persönlichen iCloud-Konto des Benutzers über Apples iCloud (CloudKit) gespeichert. Der App-Betreiber kann diese Daten nicht einsehen oder darauf zugreifen.",
+      row3_item: "Suchbegriffe (Titelnamen)",
+      row3_purpose: "Wird verwendet, um Cover-Artwork-Bilder für aufgezeichnete Titel abzurufen.",
+      row3_storage: "An die iTunes Search API von Apple übertragen. Es werden keine personenbezogenen Daten übermittelt.",
       row4_item: "Geräte-ID<br>(IDFA)",
-      row4_purpose: 'Wird für die Anzeigenschaltung und das Werbetargeting über Google Mobile Ads (Google AdMob) verwendet.<span class="tag" data-i18n="tag_ad_delivery">Werbeschaltung</span>',
-      row4_storage: "Wird an Google LLC (Google Mobile Ads/AdMob) übertragen. Wird gemäß den Datenschutzbestimmungen von Google zur Bereitstellung von Werbung und Leistungsmessung verwendet.",
-      row5_item: "Nutzungsinformationen des Geräts",
-      row5_purpose: "Wird verwendet, um die Genauigkeit des Werbetargetings zu verbessern und die Anzeigenleistung über Google Mobile Ads zu messen.",
-      row5_storage: "Wird an Google LLC (Google Mobile Ads/AdMob) übertragen.",
+      row4_purpose: 'Wird für Werbeauslieferung und Ad-Targeting über Google Mobile Ads (Google AdMob) verwendet.<span class="tag" data-i18n="tag_ad_delivery">Werbeauslieferung</span>',
+      row4_storage: "An Google LLC (Google Mobile Ads/AdMob) übertragen. Wird gemäß der Datenschutzrichtlinie von Google zur Anzeigenschaltung und Leistungsmessung verwendet.",
+      row5_item: "Gerätenutzungsdaten",
+      row5_purpose: "Wird verwendet, um die Genauigkeit des Ad-Targetings zu verbessern und die Werbeleistung über Google Mobile Ads zu messen.",
+      row5_storage: "An Google LLC (Google Mobile Ads/AdMob) übertragen.",
       tag_on_device: "Auf dem Gerät",
-      tag_ad_delivery: "Werbung",
-      sec1_callout: "Der Zugriff auf das Mikrofon erfolgt nur, wenn der Nutzer im iOS-Berechtigungsdialog ausdrücklich die Erlaubnis erteilt hat. Diese App läuft nicht im Hintergrund; die Mikrofonnutzung ist strikt auf die aktive App-Nutzung beschränkt.",
+      tag_ad_delivery: "Werbeauslieferung",
+      sec1_callout: "Der Mikrofonzugriff erfolgt nur nach ausdrücklicher Genehmigung durch den Benutzer über den iOS-Systemdialog. Diese App läuft nicht im Hintergrund; die Mikrofonnutzung ist strikt auf die aktive App-Nutzung beschränkt.",
       sec2_title: "Nicht erfasste Informationen",
       sec2_desc: "Diese App erfasst oder sammelt die folgenden Informationen nicht (Informationen zur Datenerfassung durch Google Mobile Ads finden Sie in Abschnitt 05 unten):",
-      sec2_item1: "Personenbezogene Registrierungsdaten wie Name, E-Mail-Adresse oder Telefonnummer (diese App erfordert keine Konto-Registrierung).",
-      sec2_item2: "Auf dem Gerät gespeicherte Daten ohne Bezug zu App-Funktionen wie Kontakte, Fotobibliothek oder Standortdaten.",
-      sec2_item3: "Eigene Analyse-SDKs (Analytics) oder Tracking-Tools (ausgenommen Werbetracking von Drittanbietern über Google Mobile Ads).",
+      sec2_item1: "Personenbezogene Daten wie vollständiger Name, E-Mail-Adresse oder Telefonnummer (diese App erfordert keine Kontoregistrierung).",
+      sec2_item2: "Personenbezogene Daten auf dem Gerät, die nicht mit App-Funktionen in Zusammenhang stehen, wie Kontakte, Fotobibliothek oder Standortdaten.",
+      sec2_item3: "Eigene Analyse-SDKs oder Tracking-Tools (ausgenommen Werbetracking von Drittanbietern über Google Mobile Ads).",
       sec3_title: "Weitergabe an Dritte",
-      sec3_desc: "Diese App verkauft oder übermittelt gesammelte Informationen nicht an Dritte. Wie oben erwähnt, werden Titel-Protokolldaten im persönlichen iCloud-Konto des Nutzers gespeichert, und Artwork-Suchanfragen kommunizieren ausschließlich mit der öffentlichen iTunes Search API von Apple, ohne dass personenbezogene Daten übertragen werden.",
+      sec3_desc: "Diese App verkauft oder übermittelt erfasste Informationen nicht an Dritte. Wie oben erwähnt, werden Titeldaten im persönlichen iCloud-Konto des Benutzers gespeichert und Artwork-Anfragen nutzen die öffentliche iTunes Search API von Apple ohne Übertragung personenbezogener Daten.",
       sec4_title: "Datenlöschung",
-      sec4_desc: "Titel-Protokolldaten können durch Löschaktionen innerhalb der App, durch Deaktivieren der iCloud-Synchronisierung in den iOS-Einstellungen oder durch Deinstallieren der App gelöscht werden. Es verbleiben keine Nutzerdaten auf vom App-Inhaber betriebenen Servern.",
+      sec4_desc: "Titeldaten können über Löschaktionen in der App, durch Deaktivieren der iCloud-Synchronisierung in den iOS-Einstellungen oder durch Deinstallieren der App gelöscht werden. Es verbleiben keine Benutzerdaten auf vom App-Inhaber betriebenen Servern.",
       sec5_title: "Über Google Mobile Ads",
-      sec5_p1: 'Diese App nutzt „Google Mobile Ads (AdMob)“, eine Werbeplattform von Google LLC. Google Mobile Ads erfasst und verwendet die folgenden Informationen zur Anzeigenschaltung und Leistungsanalyse:',
-      sec5_item1: "Gerätekennungen (IDFA)",
+      sec5_p1: 'Diese App nutzt "Google Mobile Ads (AdMob)", eine Werbeplattform von Google LLC. Google Mobile Ads erfasst und verwendet die folgenden Informationen zur Anzeigenschaltung und Leistungsanalyse:',
+      sec5_item1: "Geräte-IDs (IDFA)",
       sec5_item2: "Gerätenutzungsdaten",
-      sec5_item3: "Anzeigen-Interaktionsdaten",
-      sec5_p2: 'Diese Informationen werden verwendet, um relevante Anzeigen bereitzustellen und die Anzeigenleistung zu messen. Nutzer können das Tracking für diese App unter iOS in den „Einstellungen“ -> „Datenschutz & Sicherheit“ -> „Tracking“ einschränken. Weitere Details finden Sie in der <a href="https://policies.google.com/privacy" style="color:var(--accent-2);font-weight:600;text-decoration:none;" target="_blank" rel="noopener">Datenschutzerklärung von Google</a>.',
+      sec5_item3: "Werbeinteraktionsdaten",
+      sec5_p2: 'Diese Informationen werden verwendet, um relevante Anzeigen auszuliefern und die Werbeleistung zu messen. Benutzer können das Tracking für diese App in den iOS-"Einstellungen" -> "Datenschutz & Sicherheit" -> "Tracking" einschränken. Weitere Details finden Sie in der <a href="https://policies.google.com/privacy" style="color:var(--accent-2);font-weight:600;text-decoration:none;" target="_blank" rel="noopener">Datenschutzrichtlinie von Google</a>.',
       sec6_title: "Schutz der Privatsphäre von Kindern",
-      sec6_desc: "Diese App richtet sich nicht an Kinder, und wir erheben wissentlich keine personenbezogenen Daten von Kindern jeglichen Alters.",
+      sec6_desc: "Diese App richtet sich nicht an Kinder und wir erfassen wissentlich keine personenbezogenen Daten von Kindern jeden Alters.",
       sec7_title: "Änderungen dieser Richtlinie",
-      sec7_desc: "Diese Datenschutzrichtlinie kann aufgrund von Gesetzesänderungen oder neuen App-Funktionen ohne vorherige Ankündigung aktualisiert werden. Aktualisierte Bestimmungen werden mit der Veröffentlichung auf dieser Seite wirksam, was durch das Datum „Zuletzt aktualisiert“ angegeben wird.",
-      sec8_title: "Kontakt",
-      sec8_desc: "Bei Fragen zu dieser Datenschutzrichtlinie oder den Datenschutzpraktiken dieser App wenden Sie sich bitte an:",
+      sec7_desc: "Diese Datenschutzrichtlinie kann aufgrund gesetzlicher Änderungen oder neuer App-Funktionen ohne vorherige Ankündigung aktualisiert werden. Aktualisierte Bedingungen werden mit der Veröffentlichung auf dieser Seite wirksam.",
+      sec8_title: "Kontaktieren Sie uns",
+      sec8_desc: "Bei Fragen zu dieser Datenschutzrichtlinie oder den Datenschutzpraktiken dieser App kontaktieren Sie uns bitte unter:",
       footer_contact: "Kontakt"
     },
     fr: {
-      doc_title: "DJLog Politique de Confidentialité",
-      lang_label: "Langue：",
-      title: "Politique de Confidentialité",
-      meta_effective_label: "Date d'entrée en vigueur:",
+      doc_title: "Politique de confidentialité DJLog",
+      lang_label: "Language:",
+      title: "Politique de confidentialité",
+      meta_effective_label: "Date d'entrée en vigueur :",
       meta_effective_date: "11 septembre 2026",
-      meta_updated_label: "Dernière mise à jour:",
+      meta_updated_label: "Dernière mise à jour :",
       meta_updated_date: "17 septembre 2026",
-      meta_target_label: "Application concernée:",
+      meta_target_label: "Application concernée :",
       meta_target_app: "DJLog (iOS)",
-      lede: '« DJLog » (ci-après désignée « cette Application ») est une application iOS conçue pour enregistrer les morceaux joués lors de prestations DJ. Cette Politique de Confidentialité explique les types d\'informations collectées, l\'objectif de leur utilisation et l\'emplacement de stockage des données. Cette Application utilise une plateforme publicitaire (Google Mobile Ads) qui collecte des identifiants d\'appareil et des données associées.',
+      lede: '« DJLog » (ci-après désignée « cette Application ») est une application iOS conçue pour enregistrer les morceaux joués lors de prestations DJ. Cette politique de confidentialité explique les types d\'informations collectées, l\'objectif d\'utilisation et le lieu de stockage des données. Cette Application utilise une plateforme publicitaire (Google Mobile Ads), qui collecte des identifiants d\'appareil et des données associées.',
       sec1_title: "Informations collectées et objectif d'utilisation",
-      sec1_desc: "Les informations collectées par cette Application sont utilisées exclusivement pour fournir sa fonctionnalité principale (enregistrement et gestion des historiques de morceaux). Les catégories d'informations collectées sont les suivantes :",
+      sec1_desc: "Les informations collectées par cette Application sont utilisées uniquement pour fournir sa fonctionnalité principale (enregistrement et gestion des historiques de morceaux) :",
       th_info_type: "Type d'information",
       th_purpose: "Objectif d'utilisation",
-      th_storage: "Stockage & Transmission",
+      th_storage: "Stockage et transmission",
       row1_item: "Microphone (Audio ambiant)",
-      row1_purpose: 'Utilisé pour la reconnaissance automatique des morceaux en cours de lecture et pour permettre aux utilisateurs d\'analyser et d\'enregistrer leurs propres fichiers audio.<span class="tag" data-i18n="tag_on_device">Traitement sur l\'appareil</span>',
+      row1_purpose: 'Utilisé pour la reconnaissance automatique des morceaux en cours de lecture et pour permettre aux utilisateurs d\'analyser et d\'enregistrer leurs fichiers audio.<span class="tag" data-i18n="tag_on_device">Traitement sur l\'appareil</span>',
       row1_storage: "Les données audio ne sont jamais transmises ni stockées sur les serveurs de l'éditeur de l'application. La reconnaissance et l'analyse sont effectuées entièrement sur l'appareil.",
-      row2_item: "Données du journal de morceaux<br>(Titre, artiste, horodatage, etc.)",
-      row2_purpose: "Utilisé pour conserver et synchroniser les listes de lecture enregistrées dans l'application et entre plusieurs appareils de l'utilisateur.",
-      row2_storage: "Stocké en toute sécurité sur le compte iCloud personnel de l'utilisateur via iCloud (CloudKit) d'Apple. L'éditeur de l'application ne peut ni consulter ni accéder à ces données.",
-      row3_item: "Mots-clés de recherche (Titres, etc.)",
-      row3_purpose: "Utilisé pour récupérer les pochettes (artworks) correspondant aux morceaux enregistrés.",
-      row3_storage: "Transmis à l'API iTunes Search d'Apple. Aucune information personallement identifiable n'est incluse.",
+      row2_item: "Données d'historique des morceaux<br>(Nom du morceau, artiste, date/heure, etc.)",
+      row2_purpose: "Utilisé pour conserver et synchroniser les listes de morceaux enregistrées dans l'application et sur plusieurs appareils de l'utilisateur.",
+      row2_storage: "Stocké en toute sécurité sur le compte iCloud personnel de l'utilisateur via iCloud (CloudKit) d'Apple. L'éditeur de l'application ne peut pas consulter ni accéder à ces données.",
+      row3_item: "Mots-clés de recherche (Noms de morceaux)",
+      row3_purpose: "Utilisé pour récupérer les images de pochette des morceaux enregistrés.",
+      row3_storage: "Transmis à l'API de recherche iTunes d'Apple. Aucune information d'identification personnelle n'est incluse.",
       row4_item: "Identifiant d'appareil<br>(IDFA)",
       row4_purpose: 'Utilisé pour la diffusion d\'annonces et le ciblage publicitaire via Google Mobile Ads (Google AdMob).<span class="tag" data-i18n="tag_ad_delivery">Diffusion d\'annonces</span>',
-      row4_storage: "Transmis à Google LLC (Google Mobile Ads/AdMob). Utilisé pour diffuser des annonces et mesurer la performance publicitaire conformément à la Politique de Confidentialité de Google.",
-      row5_item: "Informations d'utilisation de l'appareil",
-      row5_purpose: "Utilisé pour améliorer la précision du ciblage publicitaire et mesurer la performance des annonces via Google Mobile Ads.",
+      row4_storage: "Transmis à Google LLC (Google Mobile Ads/AdMob). Utilisé pour la diffusion d'annonces et la mesure des performances publicitaires conformément à la politique de confidentialité de Google.",
+      row5_item: "Données d'utilisation de l'appareil",
+      row5_purpose: "Utilisé pour améliorer la précision du ciblage publicitaire et mesurer les performances publicitaires via Google Mobile Ads.",
       row5_storage: "Transmis à Google LLC (Google Mobile Ads/AdMob).",
       tag_on_device: "Sur l'appareil",
-      tag_ad_delivery: "Publicité",
-      sec1_callout: "L'accès au microphone n'a lieu que si l'utilisateur accorde une autorisation explicite via la boîte de dialogue système iOS. Cette Application ne fonctionne pas en arrière-plan ; l'utilisation du microphone est strictement limitée à l'utilisation active de l'application.",
+      tag_ad_delivery: "Diffusion d'annonces",
+      sec1_callout: "L'accès au microphone se produit uniquement lorsque l'autorisation explicite est accordée par l'utilisateur via la boîte de dialogue système d'iOS. Cette Application ne fonctionne pas en arrière-plan ; l'utilisation du microphone est strictement limitée à l'utilisation active de l'application.",
       sec2_title: "Informations non collectées",
-      sec2_desc: "Cette Application ne collecte ni ne rassemble les informations suivantes (concernant la collecte de données par Google Mobile Ads, veuillez vous référer à la Section 05 ci-dessous) :",
-      sec2_item1: "Informations d'inscription personallement identifiables telles que le nom, l'adresse e-mail ou le numéro de téléphone (cette Application ne nécessite pas de création de compte).",
-      sec2_item2: "Données personnelles sur l'appareil non liées aux fonctions de l'application, telles que les contacts, la photothèque ou les données de géolocalisation.",
-      sec2_item3: "Outils d'analyse propriétaire (Analytics) ou outils de suivi (à l'exclusion du suivi publicitaire tiers via Google Mobile Ads).",
-      sec3_title: "Transmission à des tiers",
-      sec3_desc: "Cette Application ne vend ni ne fournit les informations collectées à des tiers. Comme indiqué ci-dessus, les données du journal de morceaux sont stockées sur le compte iCloud personnel de l'utilisateur, et les recherches de pochettes utilisent l'API publique iTunes Search d'Apple sans transmettre d'informations personnelles.",
+      sec2_desc: "Cette Application ne collecte ni ne recueille les informations suivantes (pour la collecte de données par Google Mobile Ads, veuillez vous référer à la section 05 ci-dessous) :",
+      sec2_item1: "Informations d'identification personnelle telles que le nom complet, l'adresse e-mail ou le numéro de téléphone (cette Application ne nécessite pas de création de compte).",
+      sec2_item2: "Données personnelles sur l'appareil non liées aux fonctions de l'application, telles que les contacts, la photothèque ou les données de localisation.",
+      sec2_item3: "SDK d'analyse propriétaire ou outils de suivi (à l'exclusion du suivi publicitaire tiers via Google Mobile Ads).",
+      sec3_title: "Fourniture à des tiers",
+      sec3_desc: "Cette Application ne vend ni ne fournit les informations collectées à des tiers. Comme indiqué ci-dessus, les données d'historique des morceaux sont stockées sur le compte iCloud personnel de l'utilisateur, et les demandes de pochettes utilisent l'API publique de recherche iTunes d'Apple sans transmettre d'informations personnelles.",
       sec4_title: "Suppression des données",
-      sec4_desc: "Les données du journal de morceaux peuvent être supprimées via les actions de suppression intégrées à l'application, en désactivant la synchronisation iCloud dans les Réglages iOS ou en désinstallant l'Application. Aucune donnée utilisateur ne subsiste sur les serveurs exploités par le propriétaire de l'application.",
+      sec4_desc: "Les données d'historique des morceaux peuvent être supprimées via des actions de suppression dans l'application, en désactivant la synchronisation iCloud dans les Réglages iOS, ou en désinstallant l'Application. Aucune donnée utilisateur ne reste sur les serveurs gérés par le propriétaire de l'application.",
       sec5_title: "À propos de Google Mobile Ads",
-      sec5_p1: 'Cette Application utilise « Google Mobile Ads (AdMob) », une plateforme publicitaire fournie par Google LLC. Google Mobile Ads collecte et utilise les informations suivantes à des fins de diffusion d\'annonces et d\'analyse de performance :',
+      sec5_p1: 'Cette Application utilise « Google Mobile Ads (AdMob) », une plateforme publicitaire fournie par Google LLC. Google Mobile Ads collecte et utilise les informations suivantes pour la diffusion d\'annonces et l\'analyse des performances :',
       sec5_item1: "Identifiants d'appareil (IDFA)",
       sec5_item2: "Données d'utilisation de l'appareil",
       sec5_item3: "Données d'interaction avec les annonces",
-      sec5_p2: 'Ces informations sont utilisées pour diffuser des annonces pertinentes et mesurer la performance publicitaire. Les utilisateurs peuvent restreindre le suivi pour cette Application dans les « Réglages » iOS -> « Confidentialité et sécurité » -> « Suivi ». Pour plus de détails, veuillez consulter la <a href="https://policies.google.com/privacy" style="color:var(--accent-2);font-weight:600;text-decoration:none;" target="_blank" rel="noopener">Règles de confidentialité de Google</a>.',
+      sec5_p2: 'Ces informations sont utilisées pour diffuser des annonces pertinentes et mesurer les performances publicitaires. Les utilisateurs peuvent restreindre le suivi de cette Application dans les « Réglages » d\'iOS -> « Confidentialité et sécurité » -> « Suivi ». Pour plus de détails, veuillez consulter la <a href="https://policies.google.com/privacy" style="color:var(--accent-2);font-weight:600;text-decoration:none;" target="_blank" rel="noopener">politique de confidentialité de Google</a>.',
       sec6_title: "Confidentialité des enfants",
-      sec6_desc: "Cette Application ne s'adresse pas aux enfants et nous ne collectons pas sciemment d'informations personnelles auprès d'enfants, quel que soit leur âge.",
+      sec6_desc: "Cette Application ne s'adresse pas aux enfants et nous ne collectons pas sciemment d'informations personnelles auprès d'enfants de tout âge.",
       sec7_title: "Modifications de cette politique",
-      sec7_desc: "Cette Politique de Confidentialité peut être mise à jour sans préavis en raison de révisions légales ou de nouvelles fonctionnalités. Les conditions mises à jour prennent effet dès leur publication sur cette page, comme indiqué par la 'Dernière mise à jour'.",
+      sec7_desc: "Cette politique de confidentialité peut être mise à jour sans préavis en raison de révisions légales ou de nouvelles fonctionnalités de l'application. Les conditions mises à jour prennent effet dès leur publication sur cette page.",
       sec8_title: "Nous contacter",
-      sec8_desc: "Pour toute question concernant cette Politique de Confidentialité ou les pratiques de confidentialité de cette Application, veuillez nous contacter à :",
+      sec8_desc: "Pour toute question concernant cette politique de confidentialité ou les pratiques de confidentialité de cette Application, veuillez nous contacter à :",
       footer_contact: "Contact"
     }
   };
 
-  // 言語切り替え処理
+  // 言語切り替え関数
   function switchLanguage(lang) {
-    const data = i18nData[lang] || i18nData.ja;
+    const data = i18nData[lang];
+    if (!data) return;
 
-    // 1. data-i18n を持つ要素のテキスト/HTMLを切替
+    // HTMLのlang属性を変更
+    document.documentElement.lang = lang;
+
+    // data-i18n 属性を持つ要素を更新
     document.querySelectorAll('[data-i18n]').forEach(el => {
       const key = el.getAttribute('data-i18n');
-      if (data[key] !== undefined) {
-        if (el.tagName === 'TITLE') {
-          document.title = data[key];
-        } else {
+      if (data[key]) {
+        // タグ（HTML）を含む要素は innerHTML、その他は innerText/textContent
+        if (data[key].includes('<')) {
           el.innerHTML = data[key];
+        } else {
+          el.textContent = data[key];
         }
       }
     });
 
-    // 2. data-i18n 内のネストされた要素（タグ等）の再読み込み処理
-    document.querySelectorAll('[data-i18n]').forEach(el => {
-      const key = el.getAttribute('data-i18n');
-      if (data[key] !== undefined && el.tagName !== 'TITLE') {
-        el.innerHTML = data[key];
-      }
-    });
-
-    // 属性の変更とローカルストレージ保存
-    document.documentElement.lang = lang;
-    localStorage.setItem('djlog_privacy_lang', lang);
-  }
-
-  // 初期化処理（ブラウザ言語判定・保存設定読み込み）
-  document.addEventListener('DOMContentLoaded', () => {
-    const savedLang = localStorage.getItem('djlog_privacy_lang');
-    
-    // ブラウザのプライマリ言語を取得して自動判定
-    const userNavLang = navigator.language.toLowerCase();
-    let browserLang = 'en';
-    if (userNavLang.startsWith('ja')) browserLang = 'ja';
-    else if (userNavLang.startsWith('zh')) browserLang = 'zh';
-    else if (userNavLang.startsWith('ko')) browserLang = 'ko';
-    else if (userNavLang.startsWith('es')) browserLang = 'es';
-    else if (userNavLang.startsWith('de')) browserLang = 'de';
-    else if (userNavLang.startsWith('fr')) browserLang = 'fr';
-
-    const targetLang = savedLang || browserLang;
-
-    const langSelect = document.getElementById('langSelect');
-    if (langSelect) {
-      langSelect.value = targetLang;
+    // ページのタイトルを更新
+    if (data.doc_title) {
+      document.title = data.doc_title;
     }
-    switchLanguage(targetLang);
-  });
+  }
 </script>
-
 </body>
 </html>
