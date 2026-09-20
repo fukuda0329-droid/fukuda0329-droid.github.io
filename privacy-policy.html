@@ -845,6 +845,12 @@
     // HTMLのlang属性を変更
     document.documentElement.lang = lang;
 
+    // セレクトボックスの選択状態を同期
+    const langSelect = document.getElementById('langSelect');
+    if (langSelect && langSelect.value !== lang) {
+      langSelect.value = lang;
+    }
+
     // data-i18n 属性を持つ要素を更新
     document.querySelectorAll('[data-i18n]').forEach(el => {
       const key = el.getAttribute('data-i18n');
@@ -863,6 +869,19 @@
       document.title = data.doc_title;
     }
   }
+
+  // ページ読み込み時にアクセス元の言語を判定（日本語以外は英語を初期表示）
+  document.addEventListener("DOMContentLoaded", () => {
+    const userLang = (navigator.language || navigator.userLanguage || '').toLowerCase();
+    
+    // 日本語環境（ja, ja-JP など）以外のアクセスはデフォルトで英語（en）表示に設定
+    if (!userLang.startsWith('ja')) {
+      // ユーザーの言語が辞書内に存在する場合はその言語、それ以外は英語(en)
+      const langPrefix = userLang.split('-')[0];
+      const initialLang = i18nData[langPrefix] ? langPrefix : 'en';
+      switchLanguage(initialLang);
+    }
+  });
 </script>
 </body>
 </html>
