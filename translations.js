@@ -1,5 +1,6 @@
 window.DJLOG_TRANSLATIONS = {
   "en": {
+    "navManual": "User Guide",
     "navFeatures": "Explore",
     "navGallery": "Gallery",
     "skip": "Skip to content",
@@ -63,6 +64,7 @@ window.DJLOG_TRANSLATIONS = {
     "eyebrow": "YOUR MUSIC. YOUR SETS. YOUR STORY."
   },
   "ja": {
+    "navManual": "操作方法",
     "navFeatures": "機能を見る",
     "navGallery": "ギャラリー",
     "skip": "本文へ移動",
@@ -126,6 +128,7 @@ window.DJLOG_TRANSLATIONS = {
     "eyebrow": "あなたの音楽。あなたのセット。あなたの物語。"
   },
   "zh-hans": {
+    "navManual": "使用手册",
     "navFeatures": "探索功能",
     "navGallery": "图片一览",
     "skip": "跳至正文",
@@ -189,6 +192,7 @@ window.DJLOG_TRANSLATIONS = {
     "eyebrow": "YOUR MUSIC. YOUR SETS. YOUR STORY."
   },
   "ko": {
+    "navManual": "사용 설명서",
     "navFeatures": "기능 살펴보기",
     "navGallery": "갤러리",
     "skip": "본문으로 이동",
@@ -252,6 +256,7 @@ window.DJLOG_TRANSLATIONS = {
     "eyebrow": "YOUR MUSIC. YOUR SETS. YOUR STORY."
   },
   "es": {
+    "navManual": "Manual de usuario",
     "navFeatures": "Funciones",
     "navGallery": "Galería",
     "skip": "Ir al contenido",
@@ -315,6 +320,7 @@ window.DJLOG_TRANSLATIONS = {
     "eyebrow": "YOUR MUSIC. YOUR SETS. YOUR STORY."
   },
   "de": {
+    "navManual": "Bedienungsanleitung",
     "navFeatures": "Funktionen",
     "navGallery": "Galerie",
     "skip": "Zum Inhalt",
@@ -378,6 +384,7 @@ window.DJLOG_TRANSLATIONS = {
     "eyebrow": "YOUR MUSIC. YOUR SETS. YOUR STORY."
   },
   "fr": {
+    "navManual": "Guide d'utilisation",
     "navFeatures": "Fonctionnalités",
     "navGallery": "Galerie",
     "skip": "Aller au contenu",
