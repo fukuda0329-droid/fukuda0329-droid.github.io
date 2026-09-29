@@ -7,3 +7,6 @@
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}.button:hover{transform:none}}
 /* Let translated copy determine the mobile card height. */
 @media(max-width:700px){.original-card{height:auto;min-height:740px}.analysis-visual{position:relative;inset:auto;height:395px}.original-card .card-copy{padding-bottom:30px}}
+/* Keep the guide reachable at the top when desktop navigation is hidden. */
+.mobile-manual{display:none}
+@media(max-width:700px){.header{height:104px}.nav{height:65px}.mobile-manual{display:flex;align-items:center;justify-content:center;height:39px;border-top:1px solid var(--line);color:var(--mint);font-size:12px;font-weight:600}}
