@@ -32,12 +32,14 @@
     const screenLanguage = lang === 'ja' ? 'ja' : 'en';
     const descriptions = {main:t.poster1,analysis:t.originalTitle,share:t.poster6,swipe:t.swipeTitle,manual:t.manualTitle,sets:t.setsTitle,trends:t.trendsTitle};
     document.querySelectorAll('[data-screen]').forEach(img => {
-      const src = `assets/screens/${screenLanguage}/${img.dataset.screen}.webp`;
+      const filename = img.dataset.screen === 'main' ? 'main-bg' : img.dataset.screen;
+      const src = `assets/screens/${screenLanguage}/${filename}.webp`;
       if (img.getAttribute('src') !== src) img.src = src;
       img.alt = 'DJLog — ' + descriptions[img.dataset.screen].replaceAll('\n',' ');
     });
     document.querySelectorAll('[data-poster]').forEach(img => {
-      const src = `assets/gallery/${lang}/${img.dataset.poster}.webp`;
+      const filename = ['1', '2'].includes(img.dataset.poster) ? `${img.dataset.poster}-bg` : img.dataset.poster;
+      const src = `assets/gallery/${lang}/${filename}.webp`;
       if (img.getAttribute('src') !== src) img.src = src;
       img.alt = t['poster' + img.dataset.poster];
     });

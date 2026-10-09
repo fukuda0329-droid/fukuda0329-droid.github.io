@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#080a0a">
-  <meta name="description" content="Capture your music, rediscover your selections, and share your setlists. Meet DJLog 1.5 for iPhone.">
+  <meta name="description" content="Capture your music, rediscover your selections, and share your setlists. Meet DJLog 1.5.3 for iPhone.">
   <meta name="robots" content="noindex,nofollow">
   <meta property="og:title" content="DJLog — Play the moment. Keep the story.">
   <meta property="og:description" content="Your music. Your sets. Your story. Discover DJLog for iPhone.">
@@ -38,13 +38,13 @@
         <p class="hero-description" data-i18n="heroDescription">Stay in the mix. DJLog keeps track of the music,
 so you can relive every set.</p>
         <div class="hero-actions"><a class="button store-link" href="https://apps.apple.com/app/djlog/id6806450722"><span data-i18n="store">View on the App Store</span><span aria-hidden="true">↗</span></a><a class="text-link" href="#features"><span data-i18n="explore">Explore DJLog</span><span aria-hidden="true">↓</span></a></div>
-        <div class="preview-row"><p class="preview-note" data-i18n="preview">DJLog 1.5.1 is now available on the App Store</p><a class="button button-small testflight-link" href="https://testflight.apple.com/join/gEkGYNHJ" target="_blank" rel="noopener"><span data-i18n="testflightLink">Try new features on TestFlight</span><span aria-hidden="true">↗</span></a></div>
+        <div class="preview-row"><p class="preview-note" data-i18n="preview">DJLog 1.5.3 is now available on the App Store</p><a class="button button-small testflight-link" href="https://testflight.apple.com/join/gEkGYNHJ" target="_blank" rel="noopener"><span data-i18n="testflightLink">Try new features on TestFlight</span><span aria-hidden="true">↗</span></a></div>
       </div>
       <div class="hero-stage">
         <div class="halo" aria-hidden="true"></div><div class="orbit orbit-one" aria-hidden="true"></div><div class="orbit orbit-two" aria-hidden="true"></div>
         <div class="device device-left"><div class="device-screen"><img src="assets/screens/en/analysis.webp" data-screen="analysis" width="820" height="1783" alt="DJLog song analysis" fetchpriority="high"></div><i class="island" aria-hidden="true"></i></div>
         <div class="device device-right"><div class="device-screen"><img src="assets/screens/en/share.webp" data-screen="share" width="820" height="1783" alt="DJLog setlist sharing" fetchpriority="high"></div><i class="island" aria-hidden="true"></i></div>
-        <div class="device device-center"><div class="device-screen"><img src="assets/screens/en/main.webp" data-screen="main" width="820" height="1783" alt="DJLog music history" fetchpriority="high"></div><i class="island" aria-hidden="true"></i><i class="side-button" aria-hidden="true"></i></div>
+        <div class="device device-center"><div class="device-screen"><img src="assets/screens/en/main-bg.webp" data-screen="main" width="820" height="1783" alt="DJLog music history with BG button" fetchpriority="high"></div><i class="island" aria-hidden="true"></i><i class="side-button" aria-hidden="true"></i></div>
         <div class="stage-caption"><span class="tiny-line"></span><span data-i18n="stageCaption">Every track. A part of your story.</span></div>
       </div>
       <div class="pillars wrap"><a href="#capture"><span>01 /</span><strong data-i18n="capture">Capture</strong><span aria-hidden="true">↗</span></a><a href="#discover"><span>02 /</span><strong data-i18n="discover">Rediscover</strong><span aria-hidden="true">↗</span></a><a href="#share"><span>03 /</span><strong data-i18n="share">Share</strong><span aria-hidden="true">↗</span></a></div>
@@ -62,6 +62,11 @@ Keep what made the night yours, and take it into the next one.</p>
       <div class="section-heading"><p class="eyebrow">01 / <span data-i18n="capture">Capture</span></p><h2 id="capture-title" data-i18n="captureTitle">You play.
 DJLog listens.</h2><p data-i18n="captureDescription">Recognize the music around you and build a track history.
 Set an automatic interval and stay in your flow.</p></div>
+      <article class="bg-feature" aria-labelledby="bg-title">
+        <div><span class="mini-label" data-i18n="bgLabel">BG MODE</span><h3 id="bg-title" data-i18n="bgTitle">Keep listening.
+Even with the screen locked.</h3></div>
+        <div class="bg-feature-copy"><p data-i18n="bgDescription">Tap BG to recognize music while your screen is locked or you use another app. Set an end timer and check the latest track on your Lock Screen or supported Dynamic Island.</p><p class="bg-plan" data-i18n="bgPlan">Two free starts each month. In 1.5.3, choose a monthly or one-time purchase for unlimited BG starts and no ads.</p><a class="text-link" href="manual.html#bg-mode"><span data-i18n="bgGuide">How to use BG mode</span><span aria-hidden="true">↗</span></a></div>
+      </article>
       <div class="feature-grid">
         <article class="feature-card original-card">
           <div class="card-copy"><span class="mini-label" data-i18n="originalLabel">YOUR SOUND, RECOGNIZED</span><h3 data-i18n="originalTitle">Your originals.
@@ -85,16 +90,16 @@ The story goes on.</h2><p class="section-description" data-i18n="shareDescriptio
 
     <section class="gallery-section section" id="gallery" aria-labelledby="gallery-title"><div class="wrap gallery-heading"><div><p class="eyebrow" data-i18n="galleryLabel">A CLOSER LOOK</p><h2 id="gallery-title" data-i18n="galleryTitle">A little detail.
 A lot to discover.</h2></div><div class="gallery-controls"><button type="button" id="gallery-prev" aria-label="Previous images">←</button><button type="button" id="gallery-next" aria-label="Next images">→</button></div></div><div class="gallery-track" id="gallery-track" tabindex="0" aria-label="DJLog screenshot gallery">
-      <figure><img src="assets/gallery/en/1.webp" data-poster="1" loading="lazy" width="660" height="1434" alt="Music recognition"><figcaption><span>01</span><span data-i18n="poster1">Keep track of every track.</span></figcaption></figure>
-      <figure><img src="assets/gallery/en/2.webp" data-poster="2" loading="lazy" width="660" height="1434" alt="Swipe actions and recognition interval"><figcaption><span>02</span><span data-i18n="poster2">Swipe. Sort. Done.</span></figcaption></figure>
+      <figure><img src="assets/gallery/en/1-bg.webp" data-poster="1" loading="lazy" width="660" height="1434" alt="Music recognition"><figcaption><span>01</span><span data-i18n="poster1">Keep track of every track.</span></figcaption></figure>
+      <figure><img src="assets/gallery/en/2-bg.webp" data-poster="2" loading="lazy" width="660" height="1434" alt="Swipe actions and recognition interval"><figcaption><span>02</span><span data-i18n="poster2">Swipe. Sort. Done.</span></figcaption></figure>
       <figure><img src="assets/gallery/en/3.webp" data-poster="3" loading="lazy" width="660" height="1434" alt="Manual song entry"><figcaption><span>03</span><span data-i18n="poster3">Missing a track? Add it yourself.</span></figcaption></figure>
       <figure><img src="assets/gallery/en/4.webp" data-poster="4" loading="lazy" width="660" height="1434" alt="Original song analysis"><figcaption><span>04</span><span data-i18n="poster4">Your originals. Recognized.</span></figcaption></figure>
       <figure><img src="assets/gallery/en/5.webp" data-poster="5" loading="lazy" width="660" height="1434" alt="Past sets and selection trends"><figcaption><span>05</span><span data-i18n="poster5">Your past sets. Always within reach.</span></figcaption></figure>
       <figure><img src="assets/gallery/en/6.webp" data-poster="6" loading="lazy" width="660" height="1434" alt="Setlist sharing"><figcaption><span>06</span><span data-i18n="poster6">Your setlist. Ready to share.</span></figcaption></figure>
-    </div><p class="gallery-note wrap" data-i18n="galleryNote">Screens shown are from DJLog 1.5. App screens are shown in English.</p></section>
+    </div><p class="gallery-note wrap" data-i18n="galleryNote">Screens are from the DJLog 1.5 series, including BG mode. App screens are shown in English.</p></section>
 
     <section class="download" id="download"><div class="download-glow" aria-hidden="true"></div><div class="wrap"><img class="app-icon" src="assets/icon.webp" alt="DJLog" width="88" height="88" loading="lazy"><p class="eyebrow">DJLog</p><h2 data-i18n="downloadTitle">Your next set.
-Worth remembering.</h2><p data-i18n="downloadDescription">Bring DJLog to your next session.</p><a class="button store-link" href="https://apps.apple.com/app/djlog/id6806450722"><span data-i18n="store">View on the App Store</span><span aria-hidden="true">↗</span></a><p class="download-note" data-i18n="downloadNote">Free to download · In-app purchases</p><p class="preview-note" data-i18n="releaseNote">DJLog 1.5.1 is available now.</p></div></section>
+Worth remembering.</h2><p data-i18n="downloadDescription">Bring DJLog to your next session.</p><a class="button store-link" href="https://apps.apple.com/app/djlog/id6806450722"><span data-i18n="store">View on the App Store</span><span aria-hidden="true">↗</span></a><p class="download-note" data-i18n="downloadNote">Free to download · In-app purchases</p><p class="preview-note" data-i18n="releaseNote">DJLog 1.5.3 is available now.</p></div></section>
   </main>
   <footer class="footer wrap"><div class="footer-top"><a class="brand" href="#">DJ<span class="mint">Log</span></a><div class="footer-links"><a href="https://fukuda0329-droid.github.io/manual.html" data-page="manual" data-i18n="manualLink">User guide</a><a href="https://fukuda0329-droid.github.io/support.html" data-page="support" data-i18n="supportLink">Support</a><a href="https://fukuda0329-droid.github.io/privacy-policy.html" data-page="privacy-policy" data-i18n="privacyLink">Privacy policy</a></div></div><div class="footer-bottom"><p>© 2026 Hirotoshi Fukuda</p><p data-i18n="footerTag">For the love of the next track.</p></div></footer>
   <noscript><p class="noscript-note">This page is shown in English. Enable JavaScript to choose a language.</p></noscript>
