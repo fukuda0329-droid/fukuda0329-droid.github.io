@@ -10,3 +10,5 @@
 /* Keep the guide reachable at the top when desktop navigation is hidden. */
 .mobile-manual{display:none}
 @media(max-width:700px){.header{height:104px}.nav{height:65px}.mobile-manual{display:flex;align-items:center;justify-content:center;height:39px;border-top:1px solid var(--line);color:var(--mint);font-size:12px;font-weight:600}}
+
+.bg-feature{display:grid;grid-template-columns:1fr 1fr;gap:42px;padding:36px 40px;margin-bottom:24px;border:1px solid #8de7bc36;border-radius:24px;background:linear-gradient(120deg,#142a20,#111915)}.bg-feature h3{font-size:clamp(26px,3vw,38px);line-height:1.25;letter-spacing:-.04em;white-space:pre-line;margin-top:16px}.bg-feature-copy p{font-size:14px;color:var(--muted);line-height:1.8}.bg-feature-copy .bg-plan{font-size:12px;color:#a2b7aa;margin-top:14px}.bg-feature .text-link{margin-top:20px;font-size:13px;color:var(--mint)}@media(max-width:700px){.bg-feature{grid-template-columns:1fr;gap:22px;padding:30px;margin-bottom:16px}}
